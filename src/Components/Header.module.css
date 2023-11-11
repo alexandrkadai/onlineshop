@@ -1,0 +1,15 @@
+.mainNav{
+    text-align: center;
+    
+}
+.headList{
+    display: flex;
+    justify-content: space-around;
+    
+    text-transform: uppercase;
+
+}
+
+.wrapLogo{
+
+}
