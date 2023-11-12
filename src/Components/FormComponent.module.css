@@ -1,0 +1,21 @@
+.fromWraper{
+    display: flex;
+    justify-content: center;
+    margin-top: 133px;
+}
+.formItslef{
+    display: flex;
+    flex-direction: column;
+    width: 333px;
+}
+
+.formItslef input{
+    border: 1px solid black;
+}
+.messageInput{
+    height: 133px;
+}
+.buttonSend{
+    width: 33px;
+    float: left;
+}

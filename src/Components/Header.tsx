@@ -9,16 +9,16 @@ const Header = ({}: Props) => {
     <nav className={classes.mainNav}>
       <ul className={classes.headList}>
         <li>
-          <Link to="">Shop</Link>
+          <Link to="/">Shop</Link>
         </li>
         <li>
           <Link to="">Look</Link>
         </li>
         <li>
-          <Link to="">Support</Link>
+          <Link to="/about">Support</Link>
         </li>
         <li>
-          <Link to="">Communication</Link>
+          <Link to="/contact">Communication</Link>
         </li>
       </ul>
       <ul className={classes.wrapLogo}></ul>
