@@ -11,7 +11,7 @@ function App() {
   const routes = createBrowserRouter([
     { path: '/', errorElement: <ErrorPage />, element: <MainPage /> },
     { path: '/contact', element: <ContactPage /> },
-    { path: '/about', element: <ContactPage /> },
+    { path: '/about', element: <AboutPage /> },
   ]);
   return (
     <>
