@@ -13,3 +13,14 @@
 .wrapLogo{
 
 }
+
+.logoImg{
+    width: 80px;
+    height: 80px;
+}
+.cartWrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:33px ;
+}

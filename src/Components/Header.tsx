@@ -1,28 +1,34 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import Cart from './Cart';
+import logo from '../assets/react.svg';
 import classes from './Header.module.css';
 
 type Props = {};
 
 const Header = ({}: Props) => {
   return (
-    <nav className={classes.mainNav}>
-      <ul className={classes.headList}>
-        <li>
-          <Link to="/">Shop</Link>
-        </li>
-        <li>
-          <Link to="">Look</Link>
-        </li>
-        <li>
-          <Link to="/about">Support</Link>
-        </li>
-        <li>
-          <Link to="/contact">Communication</Link>
-        </li>
-      </ul>
-      <ul className={classes.wrapLogo}></ul>
-    </nav>
+    <>
+      <nav className={classes.mainNav}>
+        <ul className={classes.headList}>
+          <li>
+            <Link to="/">Shop</Link>
+          </li>
+          <li>
+            <Link to="/look">Look</Link>
+          </li>
+          <li>
+            <Link to="/about">Support</Link>
+          </li>
+          <li>
+            <Link to="/contact">Communication</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className={classes.cartWrap}>
+        <img className={classes.logoImg} src={logo} alt="logo" />
+        <Cart />
+      </div>
+    </>
   );
 };
 

@@ -4,9 +4,9 @@ type Props = {};
 
 const LookPage = (props: Props) => {
   return (
-    <div>
+    <div className='paddingValue text-center'>
       <Header />
-      <span>LookPage</span>
+      <span className='text-[40px]'>LookPage</span>
     </div>
   );
 };

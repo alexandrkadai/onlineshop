@@ -1,0 +1,45 @@
+.productWrap {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  text-align: center;
+}
+
+.productImg {
+  width: 150px;
+  height: 200px;
+}
+
+.productPrice {
+       display: none;
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.productName {
+       display: none;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  z-index: 1;
+}
+
+.productWrap:hover {
+  .productImg {
+    opacity: 0.7;
+  }
+  .productName {
+    display: block;
+  }
+  .productPrice {
+    display: block;
+  }
+}
