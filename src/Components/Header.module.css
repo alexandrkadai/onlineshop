@@ -1,26 +1,21 @@
-.mainNav{
-    text-align: center;
-    
+.mainNav {
+  text-align: center;
 }
-.headList{
-    display: flex;
-    justify-content: space-around;
-    
-    text-transform: uppercase;
-
-}
-
-.wrapLogo{
-
+.headList {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.logoImg{
-    width: 80px;
-    height: 80px;
+.logoImg {
+  width: 80px;
+  height: 80px;
 }
-.cartWrap{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top:33px ;
+.cartWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 33px;
 }
