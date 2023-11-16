@@ -5,7 +5,7 @@ type Props = {};
 function Cart({}: Props) {
   return (
     <div>
-      <img src={bag} alt="bag" />
+     <span>cart (0)</span>
     </div>
   );
 }

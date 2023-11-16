@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
-import logo from '../assets/react.svg';
+import logo from '../assets/logo.webp';
 import classes from './Header.module.css';
 
 type Props = {};

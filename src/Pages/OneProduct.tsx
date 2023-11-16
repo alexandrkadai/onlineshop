@@ -13,7 +13,7 @@ const OneProduct = (props: Props) => {
     <div className="paddingValue">
       <Header />
       
-      <section className="flex flex-row w-full ">
+      <section className="flex flex-row w-full mt-[133px]">
         <ProductDescription name={props.name}  price={props.price} size={data}/>
         <ProductImages />
       </section>

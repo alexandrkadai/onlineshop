@@ -1,13 +1,24 @@
+.mainWrap{
+  margin-top: 30px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
 .productWrap {
   position: relative;
-  width: 150px;
-  height: 200px;
+  width: 350px;
+  height: 400px;
   text-align: center;
+  
 }
 
 .productImg {
-  width: 150px;
-  height: 200px;
+  width: 350px;
+  height: 400px;
 }
 
 .productPrice {
