@@ -25,7 +25,7 @@ const Header = ({}: Props) => {
         </ul>
       </nav>
       <div className={classes.cartWrap}>
-        <img className={classes.logoImg} src={logo} alt="logo" />
+       <Link to="/"> <img className={classes.logoImg} src={logo} alt="logo" /></Link>
         <Cart />
       </div>
     </>

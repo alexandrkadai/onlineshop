@@ -1,5 +1,5 @@
-.mainWrap{
-  margin-top: 30px;
+.mainWrap {
+  margin-top: 60px;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,6 @@
   width: 350px;
   height: 400px;
   text-align: center;
-  
 }
 
 .productImg {
@@ -22,21 +21,21 @@
 }
 
 .productPrice {
-       display: none;
+  display: none;
   position: absolute;
-  top: 55px;
+  top: 175px;
   left: 20px;
-  font-size: 25px;
+  font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .productName {
-       display: none;
+  display: none;
   position: absolute;
-  top: 40px;
+  top: 140px;
   left: 20px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   text-transform: uppercase;
   color: black;
@@ -45,7 +44,7 @@
 
 .productWrap:hover {
   .productImg {
-    opacity: 0.7;
+    opacity: 0.5;
   }
   .productName {
     display: block;

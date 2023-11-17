@@ -1,9 +1,10 @@
 .button{
     width: 150px;
-    height: 85px;
+    height: 50px;
     color: black;
     border: 2px solid black;
     background-color: white;
+    font-size: 12px;
 }
 .button:hover{
     transition: 0.5s;

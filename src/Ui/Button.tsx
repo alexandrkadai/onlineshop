@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Button = (props: Props) => {
-  return <button className={classes.button}>Some Text</button>;
+  return <button className={classes.button}>Add To Cart</button>;
 };
 
 export default Button;
