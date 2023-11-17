@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './FormComponent.module.css';
+import classes from './FormComponent.module.scss';
 
 type Props = {};
 
