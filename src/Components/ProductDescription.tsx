@@ -1,9 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../Store/actions';
-
 import { useState } from 'react';
+import { RootState } from '../Store/store';
 import Button from '../Ui/Button';
 import classes from './ProductDescription.module.scss';
+import { addedToCart } from '../Store/CartSlice/CartSlice';
 type Props = {
   id: number;
   name: string;
@@ -13,11 +14,13 @@ type Props = {
 
 const ProductDescription = (props: Props) => {
   const [count, setCount] = useState(1);
+
+  const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
   const dispatch = useDispatch();
 
-  const handleAddToCart =(item:Props) => {
-
-  }
+  const handleAddToCart = (item: Props) => {
+    dispatch(addedToCart({ id: 1, name: 'super', size: 'm', quantity: 1 }));
+  };
 
   const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -49,16 +52,31 @@ const ProductDescription = (props: Props) => {
 
       <div className={classes.quantityWrap}>
         <span className={classes.quantityTitle}>Quantity</span>
-       
-        <span> <button onClick={handleCount}>+</button> {count} <button onClick={handleMinusCount}>-</button></span>
-        
+
+        <span>
+          <button onClick={handleCount}>+</button> {count}{' '}
+          <button onClick={handleMinusCount}>-</button>
+        </span>
       </div>
 
-      <Button />
+      {/* <Button /> */}
+      <button className={classes.button} onClick={() => handleAddToCart(props)}>
+        Add To Cart{' '}
+      </button>
       <p className={classes.itemDesription}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and scrambled it to make a type specimen book.
+      </p>
+      
+      <p>
+        {caryItemState.map((item) => (
+          <div>
+            <li>{item.name}</li>
+            <li>{item.quantity}</li>
+            <li>{item.size}</li>
+          </div>
+        ))}
       </p>
     </div>
   );
