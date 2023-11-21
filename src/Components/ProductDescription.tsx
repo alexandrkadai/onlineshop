@@ -1,14 +1,23 @@
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Store/actions';
+
 import { useState } from 'react';
 import Button from '../Ui/Button';
 import classes from './ProductDescription.module.scss';
 type Props = {
-  name?: string;
-  price?: number;
-  size?: string[];
+  id: number;
+  name: string;
+  size: string;
+  quantity: number;
 };
 
 const ProductDescription = (props: Props) => {
   const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleAddToCart =(item:Props) => {
+
+  }
 
   const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
