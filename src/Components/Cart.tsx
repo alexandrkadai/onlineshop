@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ActionTypes, addToCart, deleteFromCart } from '../Store/actions/actions';
+import { ActionTypes, addToCart, deleteFromCart } from '../Store/actions';
 
 import classes from './Cart.module.css';
 type Props = {};
