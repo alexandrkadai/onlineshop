@@ -19,7 +19,7 @@ const ProductDescription = (props: Props) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (item: Props) => {
-    dispatch(addedToCart({ id: 1, name: 'super', size: 'm', quantity: 1 }));
+    dispatch(addedToCart({ id: 1, name: 'super', size: 'm', quantity: count }));
   };
 
   const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -61,7 +61,7 @@ const ProductDescription = (props: Props) => {
 
       {/* <Button /> */}
       <button className={classes.button} onClick={() => handleAddToCart(props)}>
-        Add To Cart{' '}
+        Add To Cart
       </button>
       <p className={classes.itemDesription}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
