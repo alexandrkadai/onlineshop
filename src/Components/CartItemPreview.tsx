@@ -8,17 +8,28 @@ type Props = {}
 const CartItemPreview = (props: Props) => {
     const stateData = useSelector((state: RootState) => state.carting.cartItems);
   return (
-    <div className="paddingValue">
-        <h2>Shopping Cart</h2>
+    <div className={classes.previewWrap}>
+        <h2 className={classes.pageTitle}>Shopping Cart</h2>
 
         {stateData.map((item) => (
             <ul className={classes.itemsList}>
-            <li>{item.name}</li>
+                <li>{item.id}</li>
+            <li className="font-bold">{item.name}</li>
             <li>{item.quantity}</li>
             <li>{item.size}</li>
-            <li></li>
+            
             </ul>
         ))}
+
+        <div className={classes.subtotalWrap}>
+            <div className={classes.totalCheckWrap}>
+            <span> SubTotal</span>
+            <span>1233 GRN</span>
+            </div>
+            
+            <button className={classes.button}>checkout </button>
+        </div>
+       
         </div>
   )
 }

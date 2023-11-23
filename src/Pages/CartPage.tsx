@@ -1,14 +1,17 @@
-import React from 'react';
-import Header from '../Components/Header';
-import Cart from '../Components/Cart';
 
+import Header from '../Components/Header';
+
+import CartItemPreview from '../Components/CartItemPreview';
 type Props = {};
 
 const CartPage = (props: Props) => {
   return (
     <div className="paddingValue">
       <Header />
-      <Cart />
+
+      
+      <CartItemPreview />
+      
     </div>
   );
 };

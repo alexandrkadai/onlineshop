@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../Store/actions';
 import { useState } from 'react';
 import { RootState } from '../Store/store';
-import Button from '../Ui/Button';
+// import Button from '../Ui/Button';
 import classes from './ProductDescription.module.scss';
 import { addedToCart } from '../Store/CartSlice/CartSlice';
 type Props = {
@@ -54,7 +54,7 @@ const ProductDescription = (props: Props) => {
         <span className={classes.quantityTitle}>Quantity</span>
 
         <span>
-          <button onClick={handleCount}>+</button> {count}{' '}
+          <button onClick={handleCount}>+</button> {count}
           <button onClick={handleMinusCount}>-</button>
         </span>
       </div>
