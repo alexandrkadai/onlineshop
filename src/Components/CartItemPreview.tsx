@@ -23,7 +23,7 @@ const CartItemPreview = (props: Props) => {
 
         <div className={classes.subtotalWrap}>
             <div className={classes.totalCheckWrap}>
-            <span> SubTotal</span>
+            <span>SubTotal</span>
             <span>1233 GRN</span>
             </div>
             

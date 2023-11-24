@@ -1,10 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../Store/actions';
 import { useState } from 'react';
+
 import { RootState } from '../Store/store';
-// import Button from '../Ui/Button';
 import classes from './ProductDescription.module.scss';
 import { addedToCart } from '../Store/CartSlice/CartSlice';
+
+// import Button from '../Ui/Button';
+
+
 type Props = {
   id: number;
   name: string;
@@ -14,13 +18,23 @@ type Props = {
 
 const ProductDescription = (props: Props) => {
   const [count, setCount] = useState(1);
-
+  const [optionsState, setOptionsState] = useState('');
+  
   const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
   const dispatch = useDispatch();
 
   const handleAddToCart = (item: Props) => {
-    dispatch(addedToCart({ id: 1, name: 'super', size: 'm', quantity: count }));
+    if(optionsState === ''){
+      alert('pleaseSelctSize');
+      } else {
+
+    dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count }));
+  }
   };
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setOptionsState(event.target.value);
+  }
 
   const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -43,7 +57,7 @@ const ProductDescription = (props: Props) => {
         <label htmlFor="size " className={classes.sizeTitle}>
           Size
         </label>
-        <select name="size" id="sizeSelect" className={classes.sizeSelection}>
+        <select name="size" id="sizeSelect" defaultValue='' onChange={handleSelectChange} className={classes.sizeSelection}>
           <option value="">Select Size</option>
           <option value="m">m</option>
           <option value="l">l</option>
