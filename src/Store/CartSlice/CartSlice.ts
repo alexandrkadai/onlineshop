@@ -9,10 +9,12 @@ interface CartItem {
 
 interface CartState {
   cartItems: CartItem[];
+  totalQuantity: number;
 }
 
 const initialState: CartState = {
   cartItems: [],
+  totalQuantity: 0,
 };
 
 const cartSlice = createSlice({
@@ -22,14 +24,16 @@ const cartSlice = createSlice({
     addedToCart: (state, action) => {
       const newItem = action.payload;
       const existingItem = state.cartItems.find((item) => item.id === newItem.id);
-
-      if (existingItem) {
+      var allItemstotal = 0;
+      if (existingItem?.size === newItem.size) {
         // If item already exists in cart, update its quantity
         return {
           ...state,
           cartItems: state.cartItems.map((item) =>
             item.id === newItem.id ? { ...item, quantity: item.quantity + newItem.quantity } : item,
+
           ),
+          
         };
       } else {
         // If item doesn't exist, add it to the cart
