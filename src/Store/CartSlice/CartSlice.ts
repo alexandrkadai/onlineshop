@@ -23,19 +23,21 @@ const cartSlice = createSlice({
   reducers: {
     addedToCart: (state, action) => {
       const newItem = action.payload;
-      const existingItem = state.cartItems.find((item) => item.id === newItem.id);
+      const existingItem = state.cartItems.find((item) => item.id === newItem.id && item.size === newItem.size);
       var allItemstotal = 0;
-      if (existingItem?.size === newItem.size) {
+
+      
+      if (existingItem) {
         // If item already exists in cart, update its quantity
         return {
           ...state,
           cartItems: state.cartItems.map((item) =>
-            item.id === newItem.id ? { ...item, quantity: item.quantity + newItem.quantity } : item,
+            item.id === newItem.id && item.size === newItem.size ? { ...item, quantity: item.quantity + newItem.quantity } : item,
 
           ),
           
         };
-      } else {
+      }    else {
         // If item doesn't exist, add it to the cart
         return {
           ...state,
@@ -43,6 +45,7 @@ const cartSlice = createSlice({
         };
       }
     },
+
     deletedFromCart: (state, action) => {
       const itemToDelete = action.payload;
 

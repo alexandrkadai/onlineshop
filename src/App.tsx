@@ -7,6 +7,7 @@ import ErrorPage from './Pages/ErrorPage';
 import LookPage from './Pages/LookPage';
 import OneProduct from './Pages/OneProduct';
 import CartPage from './Pages/CartPage';
+import ChecOutPage from './Pages/CheckOutPage';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     { path: '/look', element: <LookPage /> },
     {path: '/super', element: <OneProduct /> },
     {path: '/cart', element: <CartPage /> },
+    {path: '/checkout', element: <ChecOutPage /> },
 
   ]);
   return (

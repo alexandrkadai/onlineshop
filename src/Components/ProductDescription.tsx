@@ -8,7 +8,6 @@ import { addedToCart } from '../Store/CartSlice/CartSlice';
 
 // import Button from '../Ui/Button';
 
-
 type Props = {
   id: number;
   name: string;
@@ -19,22 +18,28 @@ type Props = {
 const ProductDescription = (props: Props) => {
   const [count, setCount] = useState(1);
   const [optionsState, setOptionsState] = useState('');
-  
+
   const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
   const dispatch = useDispatch();
 
   const handleAddToCart = (item: Props) => {
-    if(optionsState === ''){
-      alert('pleaseSelctSize');
-      } else {
 
-    dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count }));
-  }
+    if (optionsState === '') {
+      var textHIghlight = document.getElementById('thisIsFine') as unknown as HTMLElement;
+      if (textHIghlight) {
+        textHIghlight.style.display = 'block';
+        setTimeout(() => {
+          textHIghlight.style.display = 'none';
+        }, 5000)
+      }
+    } else {
+      dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count }));
+    }
   };
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setOptionsState(event.target.value);
-  }
+  };
 
   const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -57,10 +62,16 @@ const ProductDescription = (props: Props) => {
         <label htmlFor="size " className={classes.sizeTitle}>
           Size
         </label>
-        <select name="size" id="sizeSelect" defaultValue='' onChange={handleSelectChange} className={classes.sizeSelection}>
+        <p  id="thisIsFine" className={classes.selectSizeWarn}>Please Select Size</p>
+        <select
+          name="size"
+          id="sizeSelect"
+          defaultValue=""
+          onChange={handleSelectChange}
+          className={classes.sizeSelection}>
           <option value="">Select Size</option>
-          <option value="m">m</option>
-          <option value="l">l</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
         </select>
       </div>
 
@@ -82,7 +93,7 @@ const ProductDescription = (props: Props) => {
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and scrambled it to make a type specimen book.
       </p>
-      
+
       <p>
         {caryItemState.map((item) => (
           <div>
