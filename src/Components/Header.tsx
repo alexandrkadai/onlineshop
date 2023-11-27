@@ -3,9 +3,8 @@ import Cart from './Cart';
 import logo from '../assets/logo.webp';
 import classes from './Header.module.css';
 
-type Props = {};
 
-const Header = ({}: Props) => {
+const Header = () => {
   return (
     <>
       <nav className={classes.mainNav}>

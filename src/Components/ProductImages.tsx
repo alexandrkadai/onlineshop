@@ -1,6 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { sweet1, sweet2, sweet3, sweet4 } from '../assets';
+import sweet1 from '../assets/sweet1/sweet1.avif';
+import sweet2 from '../assets/sweet1/sweet2.avif';
+import sweet3 from '../assets/sweet1/sweet3.avif';
+import sweet4 from '../assets/sweet1/sweet4.avif';
 
 import classes  from './ProductImages.module.scss';
 type Props = {};
