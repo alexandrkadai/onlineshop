@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import sweet1 from '../assets/sweet1/sweet1.avif';
 import sweet2 from '../assets/sweet1/sweet2.avif';

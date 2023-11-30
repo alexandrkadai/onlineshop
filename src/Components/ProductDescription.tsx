@@ -8,21 +8,21 @@ import { addedToCart } from '../Store/CartSlice/CartSlice';
 
 // import Button from '../Ui/Button';
 
-type Props = {
-  id: number;
-  name: string;
-  size: string;
-  quantity: number;
-};
+// type Props = {
+//   id: number;
+//   name: string;
+//   size: string;
+//   quantity: number;
+// };
 
-const ProductDescription = (props: Props) => {
+const ProductDescription = () => {
   const [count, setCount] = useState(1);
   const [optionsState, setOptionsState] = useState('');
 
   const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
   const dispatch = useDispatch();
 
-  const handleAddToCart = (item: Props) => {
+  const handleAddToCart = () => {
 
     if (optionsState === '') {
       var textHIghlight = document.getElementById('thisIsFine') as unknown as HTMLElement;
@@ -85,7 +85,7 @@ const ProductDescription = (props: Props) => {
       </div>
 
       {/* <Button /> */}
-      <button className={classes.button} onClick={() => handleAddToCart(props)}>
+      <button className={classes.button} onClick={() => handleAddToCart()}>
         Add To Cart
       </button>
       <p className={classes.itemDesription}>

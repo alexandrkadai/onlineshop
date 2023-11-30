@@ -1,20 +1,20 @@
 import Header from '../Components/Header';
 import ProductDescription from '../Components/ProductDescription';
 import ProductImages from '../Components/ProductImages';
-type Props = {
-  name?: string;
-  price?: number;
-  size?: string[];
-};
+// type Props = {
+//   name: string;
+//   price?: number;
+//   size: string;
+// };
 
-const OneProduct = (props: Props) => {
-  const data:string[] = ['some', 'fruit'];
+const OneProduct = () => {
+  // const data:string[] = ['some', 'fruit'];
   return (
     <div className="paddingValue">
       <Header />
       
       <section className="flex flex-row w-full mt-[133px]">
-        <ProductDescription name={props.name}  price={props.price} size={data}/>
+        <ProductDescription />
         <ProductImages />
       </section>
     </div>
