@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../Store/store';
-
+import { Link } from 'react-router-dom';
 import classes from './CheckOut.module.scss';
 
-type Props = {}
 
-const ChecOut = (props: Props) => {
+
+const ChecOut = () => {
   return (
-    <div>ChecOut</div>
+    <Link to='/Chekout'>ChecOut</Link>
   )
 }
 

@@ -10,20 +10,6 @@ type Props = {};
 
 
 const ProductImages = (props: Props) => {
-//   useEffect(() =>{
-//     var url = 'https://api.novaposhta.ua/v2.0/json/';
-//     fetch(url, {method:"POST", 
-//   body: {
-//     "apiKey": "b4c3f405e2344559fe0c419d861b80c9",
-//     "modelName": "Address",
-//     "calledMethod": "searchSettlements",
-//     "methodProperties": {
-//  "CityName" : "київ",
-//  "Limit" : "50",
-//  "Page" : "2"
-//     }
-//  }}).then((response) => console.log(response));
-// }, []);
 
   return (
     <div className={classes.mainWrap}>

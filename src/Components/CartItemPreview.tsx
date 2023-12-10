@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { RootState } from "../Store/store";
 
 import classes from './CartItemOreview.module.scss';
-
+import { Link } from "react-router-dom";
 type Props = {}
 
 const CartItemPreview = (props: Props) => {
@@ -27,7 +27,7 @@ const CartItemPreview = (props: Props) => {
             <span>1233 GRN</span>
             </div>
             
-            <button className={classes.button}>checkout </button>
+            <button className={classes.button}><Link to='/checkout'>checkout</Link> </button>
         </div>
        
         </div>

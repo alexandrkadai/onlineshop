@@ -7,7 +7,7 @@ import ProductImages from '../Components/ProductImages';
 //   size: string;
 // };
 
-const OneProduct = () => {
+const OneProduct = () => { 
   // const data:string[] = ['some', 'fruit'];
   return (
     <div className="paddingValue">

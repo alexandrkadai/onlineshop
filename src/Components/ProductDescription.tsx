@@ -94,7 +94,7 @@ const ProductDescription = () => {
         galley of type and scrambled it to make a type specimen book.
       </p>
 
-      <p>
+      {/* <p>
         {caryItemState.map((item) => (
           <div>
             <li>{item.name}</li>
@@ -102,7 +102,7 @@ const ProductDescription = () => {
             <li>{item.size}</li>
           </div>
         ))}
-      </p>
+      </p> */}
     </div>
   );
 };
