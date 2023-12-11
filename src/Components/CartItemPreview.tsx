@@ -27,7 +27,7 @@ const CartItemPreview = (props: Props) => {
             <span>1233 GRN</span>
             </div>
             
-            <button className={classes.button}><Link to='/checkout'>checkout</Link> </button>
+            <Link to='/checkout'><button className={classes.button}>checkout </button></Link>
         </div>
        
         </div>

@@ -1,12 +1,14 @@
 import ChecOut from "../Components/ChecOut";
 import Header from "../Components/Header";
-import FormCheckout from "../Components/FormCheckout";
-type Props = {}
+import FormCheckout from '../Components/FormCheckout';
 
-const CheckOutPage = (props: Props) => {
+
+
+const CheckOutPage = ()=> {
   return (
     <div className="paddingValue">
         <Header/>
+
         <FormCheckout/>
         
     </div>
