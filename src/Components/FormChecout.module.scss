@@ -1,0 +1,43 @@
+.fromWraper{
+    display: flex;
+    justify-content: center;
+    margin-top: 133px;
+    margin-bottom: 100px;
+}
+.formItslef{
+    display: flex;
+    flex-direction: column;
+    width: 333px;
+}
+.formItslef label{
+    font-size: 16px;
+    color: #777777;
+}
+.formItslef input{
+    border: 1px solid #777777;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    height: 40px;
+    padding-left: 10px;
+}
+.messageInput{
+    height: 133px;
+}
+.warhouses{
+    width: 250px;
+}
+.buttonSend{
+    width: 150px;
+    height: 50px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 15px;
+}
+
+.buttonSend:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: black;
+}

@@ -1,17 +1,11 @@
-
 import Header from '../Components/Header';
-
 import CartItemPreview from '../Components/CartItemPreview';
-type Props = {};
 
-const CartPage = (props: Props) => {
+const CartPage = () => {
   return (
     <div className="paddingValue">
       <Header />
-
-      
       <CartItemPreview />
-      
     </div>
   );
 };

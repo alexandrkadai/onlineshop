@@ -1,19 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../Store/actions';
 import { useState } from 'react';
 
 import { RootState } from '../Store/store';
-import classes from './ProductDescription.module.scss';
 import { addedToCart } from '../Store/CartSlice/CartSlice';
 
-// import Button from '../Ui/Button';
-
-// type Props = {
-//   id: number;
-//   name: string;
-//   size: string;
-//   quantity: number;
-// };
+import classes from './ProductDescription.module.scss';
 
 const ProductDescription = () => {
   const [count, setCount] = useState(1);
@@ -33,7 +24,7 @@ const ProductDescription = () => {
         }, 5000)
       }
     } else {
-      dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count }));
+      dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count, price: 2000 }));
     }
   };
 
@@ -93,16 +84,6 @@ const ProductDescription = () => {
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and scrambled it to make a type specimen book.
       </p>
-
-      {/* <p>
-        {caryItemState.map((item) => (
-          <div>
-            <li>{item.name}</li>
-            <li>{item.quantity}</li>
-            <li>{item.size}</li>
-          </div>
-        ))}
-      </p> */}
     </div>
   );
 };
