@@ -40,8 +40,7 @@ const cartSlice = createSlice({
               : item,
           ),
           totalQuantity: state.totalQuantity + newItem.quantity,
-          totalAmount:
-            newItem.price * newItem.quantity + existingItem.quantity * existingItem.price,
+          totalAmount: state.totalAmount + newItem.price * newItem.quantity,
         };
       } else {
         // If item doesn't exist, add it to the cart
@@ -66,13 +65,17 @@ const cartSlice = createSlice({
           return {
             ...state,
             cartItems: state.cartItems.map((item) =>
-              item.id === stateItem.id ? { ...item, quantity: item.quantity - 1 } : item,
+              item.id === stateItem.id && item.size === stateItem.size
+                ? { ...item, quantity: item.quantity - 1 }
+                : item,
             ),
             totalQuantity: state.totalQuantity - 1,
             totalAmount: state.totalAmount - stateItem.price,
           };
         } else {
-          const updatedCartItems = state.cartItems.filter(item => !(item.id === itemToDelete.id && item.size === itemToDelete.size));
+          const updatedCartItems = state.cartItems.filter(
+            (item) => !(item.id === itemToDelete.id && item.size === itemToDelete.size),
+          );
 
           return {
             ...state,
@@ -82,13 +85,33 @@ const cartSlice = createSlice({
           };
         }
       } else {
-        return{ 
+        return {
           ...state,
-        }// handle the case when the item is not found in the cart
+        }; // handle the case when the item is not found in the cart
       }
+    },
+    addOneItem: (state, action) => {
+      const newItem = action.payload;
+      const existingItem = state.cartItems.find(
+        (item) => item.id === newItem.id && item.size === newItem.size,
+      );
+      if (existingItem) {
+        // If item already exists in cart, update its quantity
+        return {
+          ...state,
+          cartItems: state.cartItems.map((item) =>
+            item.id === newItem.id && item.size === newItem.size
+              ? { ...item, quantity: item.quantity + 1 }
+              : item,
+          ),
+          totalQuantity: state.totalQuantity + 1,
+          totalAmount: state.totalAmount + newItem.price ,
+        };
+      }
+    },
   },
-}});
+});
 
 export default cartSlice.reducer;
 
-export const { addedToCart, deletedFromCart } = cartSlice.actions;
+export const { addedToCart, deletedFromCart, addOneItem } = cartSlice.actions;

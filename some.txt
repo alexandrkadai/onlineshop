@@ -11,3 +11,13 @@ Steps to complete store :
 6. i18next  translating all stuff. 
 7. Depoly and test in hostinger. Apply real transactions on hiden object, create secret route.
 
+  {cities.map((item: any) => (
+              <option key={item.Description}>{item.Description}</option>
+            ))}
+
+             <option>Виберіть Відділення</option>
+            {some ? (
+              cities.map((item: any) => <option key={item.SiteKey}>{item.Description}</option>)
+            ) : (
+              <option>loading</option>
+            )}

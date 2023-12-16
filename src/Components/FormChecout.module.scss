@@ -1,12 +1,14 @@
+.headerTitle{
+    font-size: 25px;
+}
 .fromWraper{
-    display: flex;
-    justify-content: center;
     margin-top: 133px;
     margin-bottom: 100px;
 }
 .formItslef{
     display: flex;
     flex-direction: column;
+    margin-top: 33px;
     width: 333px;
 }
 .formItslef label{
@@ -23,6 +25,15 @@
 }
 .messageInput{
     height: 133px;
+}
+.deliveryTitle{
+    font-size: 25px;
+}
+.warhouseWrap{
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+
 }
 .warhouses{
     width: 250px;
