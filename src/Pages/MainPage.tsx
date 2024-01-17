@@ -1,16 +1,12 @@
 import Header from '../Components/Header';
-import ProductCard from '../Components/ProductCard';
-type Props = {};
+import ProductCard from '../Components/ProductComponents/ProductCard';
 
-function MainPage({}: Props) {
+function MainPage() {
   return (
-    <div className="paddingValue">
-     
+    <main className="paddingValue">
         <Header/>
-       
         <ProductCard/>
-      
-    </div>
+    </main>
   );
 }
 

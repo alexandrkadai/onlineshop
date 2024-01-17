@@ -2,7 +2,7 @@
     font-size: 25px;
 }
 .fromWraper{
-    margin-top: 133px;
+    margin-top: 73px;
     margin-bottom: 100px;
 }
 .formItslef{
@@ -11,9 +11,11 @@
     margin-top: 33px;
     width: 333px;
 }
+
 label{
     font-size: 16px;
     color: #777777;
+    margin-top: 20px;
 }
 input{
     border: 1px solid #777777;
@@ -26,16 +28,22 @@ input{
 .messageInput{
     height: 133px;
 }
+.deliveryWrap{
+    margin-top: 73px;
+}
 .deliveryTitle{
     font-size: 25px;
 }
 .warhouseWrap{
     display: flex;
     flex-direction: column;
-    margin-top: 33px;
-
+    margin-top: 23px;
 }
 .warhouses{
+    width: 250px;
+    display: none;
+}
+.warhousesList{
     width: 250px;
 }
 .buttonSend{

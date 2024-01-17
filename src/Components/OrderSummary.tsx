@@ -16,23 +16,24 @@ const OrderSummary = () => {
     
     <div className={classes.orderSummaryWrap}>
     <h4>Your Order Summary</h4>
-      <div className={classes.orderSummary}>
-        <div className={classes.orderSummaryItem}>
+      <div className={classes.orderSummaryItems}>
+       
           {stateData.map((item) => (
-            <Fragment>
-            <span>{item.name}</span>
-            <span>{item.quantity}</span>
-            <span>{item.price} GRN</span>
-            </Fragment>
+          <div className={classes.orderSummaryItem}>
+            <span className={classes.summaryItemTex}>{item.name}</span>
+            <span className={classes.summaryItemQua}>{item.quantity}</span>
+            <span className={classes.summaryItemPrice}>{item.price} GRN</span>
+            </div>
           ))}
           </div>
 
-        <div className={classes.orderSummaryItem}>
-          <span>Total</span>
-          <span>{totalAmount} GRN</span>
+        <div className={classes.orderSummaryTotal}>
+          <span className={classes.totalTetx}>Total :</span>
+          <span className={classes.totalAmount}>{totalAmount} GRN</span>
         </div>
+        <button className={classes.button}>Procceed</button>
         </div>
-      </div>
+    
      
       </Fragment>
   )

@@ -1,6 +1,6 @@
 import Header from '../Components/Header';
-import ProductDescription from '../Components/ProductDescription';
-import ProductImages from '../Components/ProductImages';
+import ProductDescription from '../Components/ProductComponents/ProductDescription';
+import ProductImages from '../Components/ProductComponents/ProductImages';
 // type Props = {
 //   name: string;
 //   price?: number;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Components/Header';
-import FormComponent from '../Components/FormComponent';
+import FormComponent from '../Components/FormsComponent/FormComponent';
 
 type Props = {};
 

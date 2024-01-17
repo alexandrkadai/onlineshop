@@ -1,5 +1,5 @@
 import Header from "../Components/Header";
-import FormCheckout from '../Components/FormCheckout';
+import FormCheckout from '../Components/FormsComponent/FormCheckout';
 import OrderSummary from "../Components/OrderSummary";
 import ChecoutLayout from "../Components/ChecoutLayout";
 

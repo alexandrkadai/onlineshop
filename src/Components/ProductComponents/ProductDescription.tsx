@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import { RootState } from '../Store/store';
-import { addedToCart } from '../Store/CartSlice/CartSlice';
+import { RootState } from '../../Store/store';
+import { addedToCart } from '../../Store/CartSlice/CartSlice';
 
 import classes from './ProductDescription.module.scss';
 

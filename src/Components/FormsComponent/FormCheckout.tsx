@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import classes from './FormChecout.module.scss';
 
 const FormCheckout = () => {
-  const [cityChoose, setCitiChoose] = useState<string | null>(null);
+  let selectElement = document.getElementById('selectInput');
+  const [inputCity, setInputCity] = useState<string>('');
 
+  const [cityChoose, setCitiChoose] = useState<string | null>(null);
   const [city, setCity] = useState([]);
 
   const [warhouseChoose, setWarhouseChoose] = useState<string | null>(null);
+
   const [warhouseW, setWarhouseW] = useState([]);
 
   const [optionsState, setOptionsState] = useState<string>('');
@@ -14,16 +17,19 @@ const FormCheckout = () => {
   // input for user city to send for city search 1st step
   const cityOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
+    setInputCity(event.target.value);
     setTimeout(() => {
       setCitiChoose(event.target.value);
+      selectElement!.style.display = 'block';
     }, 2000);
   };
 
   //Select your city from city list 2nd step
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setOptionsState(event.target.value);
-    console.log(event.target.value);
-    console.log(optionsState);
+    setInputCity(event.target.value);
+    selectElement!.style.display = 'none';
+    setCity([]);
   };
 
   const warhouseOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,25 +102,28 @@ const FormCheckout = () => {
     <div className={classes.fromWraper}>
       <h4 className={classes.headerTitle}>Delivery Information</h4>
       <form className={classes.formItslef}>
-        <label htmlFor="name">Enter Your Name</label>
+
+        <label htmlFor="name">Name</label>
         <input type="text" name="name" placeholder="Your Name" />
 
-        <label htmlFor="surname">Enter Your Surname</label>
+        <label htmlFor="surname">Surname</label>
         <input name="surname" type="text" placeholder="Your Surname" />
 
-        {/* <label htmlFor="city">Enter Your City</label>
-        <input type="text" name="city" placeholder="City Name" onChange={cityOnChangeHandler} /> */}
+        <label htmlFor="phoneNum">Phone Number</label>
+        <input name="phoneNum" type="tel" placeholder="Your Phone" />
+
+        <label htmlFor="emailAd">Email</label>
+        <input name="emailAd" type="email" placeholder="Email" />
+       
       </form>
 
-      <div className="mt-[30px]">
-        <h4 className={classes.deliveryTitle}>Delivery Method</h4> <br />
-        <span className="text-[20px]">Nova Poshta</span>
-        <br />
+      <div className={classes.deliveryWrap}>
+        <h4 className={classes.deliveryTitle}>Delivery by Novaposhta</h4>
         <div className={classes.warhouseWrap}>
           <label htmlFor="city">Enter Your City</label>
-          <input type="text" name="city" placeholder="City Name" onChange={cityOnChangeHandler} />
+          <input type="text" name="city" placeholder="City Name" value={inputCity}  onChange={cityOnChangeHandler} />
 
-          <select className={classes.warhouses} value={optionsState} onChange={handleSelectChange}>
+          <select className={classes.warhouses} onChange={handleSelectChange} id="selectInput">
             {city ? (
               city.map((item: any) => (
                 <option key={item.Description} value={item.Description}>
@@ -122,12 +131,14 @@ const FormCheckout = () => {
                 </option>
               ))
             ) : (
-              <option> loading </option>
+              <option>loading</option>
             )}
           </select>
         </div>
+
         <div className={classes.warhouseWrap}>
-          <select className={classes.warhouses}>
+        <input type="text" name="city" placeholder="City Name" value={inputCity}  onChange={cityOnChangeHandler} />
+          <select className={classes.warhousesList}>
             <option>Виберіть Відділення</option>
             {warhouseW ? (
               warhouseW.map((item: any) => (
@@ -140,6 +151,7 @@ const FormCheckout = () => {
             )}
           </select>
         </div>
+
       </div>
     </div>
   );
