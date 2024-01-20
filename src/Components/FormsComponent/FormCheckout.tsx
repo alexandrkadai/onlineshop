@@ -12,6 +12,8 @@ const FormCheckout = () => {
 
   const [warhouseW, setWarhouseW] = useState([]);
 
+  const [warhouseInput, setWarhouuseInput] = useState<string>('');
+
   const [optionsState, setOptionsState] = useState<string>('');
 
   // input for user city to send for city search 1st step
@@ -88,6 +90,7 @@ const FormCheckout = () => {
             Page: '1',
             Limit: '50',
             Language: 'UA',
+            WarehouseId: '151',
           },
         }),
       })
@@ -102,7 +105,6 @@ const FormCheckout = () => {
     <div className={classes.fromWraper}>
       <h4 className={classes.headerTitle}>Delivery Information</h4>
       <form className={classes.formItslef}>
-
         <label htmlFor="name">Name</label>
         <input type="text" name="name" placeholder="Your Name" />
 
@@ -114,14 +116,19 @@ const FormCheckout = () => {
 
         <label htmlFor="emailAd">Email</label>
         <input name="emailAd" type="email" placeholder="Email" />
-       
       </form>
 
       <div className={classes.deliveryWrap}>
         <h4 className={classes.deliveryTitle}>Delivery by Novaposhta</h4>
         <div className={classes.warhouseWrap}>
           <label htmlFor="city">Enter Your City</label>
-          <input type="text" name="city" placeholder="City Name" value={inputCity}  onChange={cityOnChangeHandler} />
+          <input
+            type="text"
+            name="city"
+            placeholder="City Name"
+            value={inputCity}
+            onChange={cityOnChangeHandler}
+          />
 
           <select className={classes.warhouses} onChange={handleSelectChange} id="selectInput">
             {city ? (
@@ -137,7 +144,13 @@ const FormCheckout = () => {
         </div>
 
         <div className={classes.warhouseWrap}>
-        <input type="text" name="city" placeholder="City Name" value={inputCity}  onChange={cityOnChangeHandler} />
+          <input
+            type="text"
+            name="warhouse"
+            placeholder="Start Enter warhouse"
+            value={warhouseInput}
+            onChange={cityOnChangeHandler}
+          />
           <select className={classes.warhousesList}>
             <option>Виберіть Відділення</option>
             {warhouseW ? (
@@ -151,7 +164,6 @@ const FormCheckout = () => {
             )}
           </select>
         </div>
-
       </div>
     </div>
   );

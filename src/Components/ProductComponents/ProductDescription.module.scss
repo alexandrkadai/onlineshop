@@ -1,15 +1,12 @@
 .descriptionWrap {
   display: flex;
   flex-direction: column;
-
   row-gap: 50px;
 }
-
 .productName {
   font-size: 45px;
   text-transform: uppercase;
 }
-
 .productPrice {
   font-size: 17px;
 }

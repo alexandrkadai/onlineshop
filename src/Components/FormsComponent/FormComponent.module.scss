@@ -1,7 +1,13 @@
+.title{
+    text-align: center;
+    margin-top: 33px;
+    text-transform: uppercase;
+    font-weight: bold;
+ }
 .fromWraper{
     display: flex;
     justify-content: center;
-    margin-top: 133px;
+    margin-top: 43px;
     margin-bottom: 100px;
 }
 .formItslef{
@@ -24,8 +30,10 @@
 .messageInput{
     margin-top: 10px;
     margin-bottom: 20px;
+    padding-left: 10px;
     border: 1px solid #777777;
     height: 133px;
+    font-size: 12px;
 }
 .buttonSend{
     width: 150px;
