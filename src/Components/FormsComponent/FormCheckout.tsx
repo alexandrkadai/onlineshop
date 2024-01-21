@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import classes from './FormChecout.module.scss';
 
 const FormCheckout = () => {
   let selectElement = document.getElementById('selectInput');
+
+  const warhouseRef = useRef(null);
   const [inputCity, setInputCity] = useState<string>('');
 
   const [cityChoose, setCitiChoose] = useState<string | null>(null);
@@ -36,7 +38,7 @@ const FormCheckout = () => {
 
   const warhouseOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setWarhouseChoose(event.target.value);
+    setWarhouseChoose(warhouseRef.current.value);
   };
 
   var url: string = 'https://api.novaposhta.ua/v2.0/json/';
@@ -86,11 +88,12 @@ const FormCheckout = () => {
           modelName: 'Address',
           calledMethod: 'getWarehouses',
           methodProperties: {
+            FindByString: "Відділення №" +warhouseChoose,
             CityName: optionsState,
             Page: '1',
             Limit: '50',
             Language: 'UA',
-            WarehouseId: '151',
+         
           },
         }),
       })
@@ -99,7 +102,7 @@ const FormCheckout = () => {
           setWarhouseW(data.data);
         });
     getDepartment();
-  }, [optionsState]);
+  }, [warhouseChoose]);
 
   return (
     <div className={classes.fromWraper}>
@@ -148,8 +151,8 @@ const FormCheckout = () => {
             type="text"
             name="warhouse"
             placeholder="Start Enter warhouse"
-            value={warhouseInput}
-            onChange={cityOnChangeHandler}
+            ref={warhouseRef}
+            onChange={warhouseOnChangeHandler}
           />
           <select className={classes.warhousesList}>
             <option>Виберіть Відділення</option>
