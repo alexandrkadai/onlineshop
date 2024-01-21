@@ -3,12 +3,16 @@ import classes from './FormChecout.module.scss';
 
 const FormCheckout = () => {
   let selectElement = document.getElementById('selectInput');
+  let warhouseSelect = document.getElementById('warhouseSelect');
 
   const warhouseRef = useRef(null);
+
   const [inputCity, setInputCity] = useState<string>('');
 
   const [cityChoose, setCitiChoose] = useState<string | null>(null);
   const [city, setCity] = useState([]);
+
+  const [warchouseSeted, setWarhouseSetted] = useState<string>('');
 
   const [warhouseChoose, setWarhouseChoose] = useState<string | null>(null);
 
@@ -36,10 +40,27 @@ const FormCheckout = () => {
     setCity([]);
   };
 
+  //Start typing to see all warhouses 1st step
   const warhouseOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setWarhouseChoose(warhouseRef.current.value);
+    setWarhouuseInput(event.target.value);
+    if (warhouseRef.current) {
+      setTimeout(() => {
+        setWarhouseChoose(warhouseRef.current.value);
+        warhouseSelect!.style.display = 'block';
+      }, 300);
+    }
   };
+
+  //Selecting warhouse that user Wish from warhouse list
+  const handleWarhouseChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setWarhouuseInput(event.target.value);
+    setWarhouseSetted(event.target.value);
+    warhouseSelect!.style.display = 'none';
+    setWarhouseW([]);
+  };
+
+  
 
   var url: string = 'https://api.novaposhta.ua/v2.0/json/';
 
@@ -88,12 +109,11 @@ const FormCheckout = () => {
           modelName: 'Address',
           calledMethod: 'getWarehouses',
           methodProperties: {
-            FindByString: "Відділення №" +warhouseChoose,
+            FindByString: 'Відділення №' + warhouseChoose,
             CityName: optionsState,
             Page: '1',
             Limit: '50',
             Language: 'UA',
-         
           },
         }),
       })
@@ -152,10 +172,13 @@ const FormCheckout = () => {
             name="warhouse"
             placeholder="Start Enter warhouse"
             ref={warhouseRef}
+            value={warhouseInput}
             onChange={warhouseOnChangeHandler}
           />
-          <select className={classes.warhousesList}>
-            <option>Виберіть Відділення</option>
+          <select
+            className={classes.warhousesList}
+            onChange={handleWarhouseChange}
+            id="warhouseSelect">
             {warhouseW ? (
               warhouseW.map((item: any) => (
                 <option key={item.SiteKey} value={item.Description}>
