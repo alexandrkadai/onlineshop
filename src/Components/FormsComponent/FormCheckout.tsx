@@ -12,8 +12,6 @@ const FormCheckout = () => {
   const [cityChoose, setCitiChoose] = useState<string | null>(null);
   const [city, setCity] = useState([]);
 
-  const [warchouseSeted, setWarhouseSetted] = useState<string>('');
-
   const [warhouseChoose, setWarhouseChoose] = useState<string | null>(null);
 
   const [warhouseW, setWarhouseW] = useState([]);

@@ -20,3 +20,16 @@
   margin-top: 33px;
   align-items: center;
 }
+@media screen and (max-width: 475px){
+  .cartWrap {
+    position: fixed;
+    top: 1px;
+    justify-content: space-around;
+    left: 1px;
+  }
+  /* .logoImg {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+  } */
+}
