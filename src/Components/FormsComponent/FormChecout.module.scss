@@ -63,3 +63,8 @@ input{
 #warhouseSelect{
     display: none;
 }
+@media screen and (max-width: 475px){
+    .fromWraper{
+        padding: 15px;
+    }
+}

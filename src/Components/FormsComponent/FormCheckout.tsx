@@ -53,7 +53,7 @@ const FormCheckout = () => {
   //Selecting warhouse that user Wish from warhouse list
   const handleWarhouseChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setWarhouuseInput(event.target.value);
-    setWarhouseSetted(event.target.value);
+    // setWarhouseSetted(event.target.value);
     warhouseSelect!.style.display = 'none';
     setWarhouseW([]);
   };
@@ -152,15 +152,14 @@ const FormCheckout = () => {
           />
 
           <select className={classes.warhouses} onChange={handleSelectChange} id="selectInput">
-            {city ? (
+            {city && (
               city.map((item: any) => (
                 <option key={item.Description} value={item.Description}>
                   {item.Description}
                 </option>
               ))
-            ) : (
-              <option>loading</option>
-            )}
+            ) 
+            }
           </select>
         </div>
 
@@ -177,15 +176,13 @@ const FormCheckout = () => {
             className={classes.warhousesList}
             onChange={handleWarhouseChange}
             id="warhouseSelect">
-            {warhouseW ? (
+            {warhouseW && (
               warhouseW.map((item: any) => (
                 <option key={item.SiteKey} value={item.Description}>
                   {item.Description}
                 </option>
               ))
-            ) : (
-              <option>loading</option>
-            )}
+            ) }
           </select>
         </div>
       </div>

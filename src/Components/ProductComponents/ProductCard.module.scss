@@ -53,3 +53,25 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 475px){
+  .mainWrap {
+    row-gap: 0px;
+  }
+  .productWrap {
+    width: auto;
+  }
+  
+    .productImg {
+      width: 300px;
+      height: 350px;
+    }
+  .productPrice {
+    display: block;
+    text-shadow: 1px 1px #fff;
+  }
+  .productName {
+    display: block;
+    text-shadow: 1px 1px #fff;
+  }
+}

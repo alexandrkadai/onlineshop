@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 import classes from './ProductCard.module.scss';
 
-type Props = {};
 
-const ProductCard = (props: Props) => {
+const ProductCard = () => {
   return (
     <div className={classes.mainWrap}>
     <div className={classes.productWrap}>

@@ -19,17 +19,33 @@
   justify-content: space-between;
   margin-top: 33px;
   align-items: center;
+  z-index: 1;
 }
 @media screen and (max-width: 475px){
+  .mainNav {
+    width: 300px;
+  }
+  .headList {
+    display: flex;
+    flex-direction: column;
+    column-gap:20px;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 100px;
+    width: 300px;
+  }
   .cartWrap {
     position: fixed;
-    top: 1px;
+margin-top: -2px;
     justify-content: space-around;
+    width: 100vw;
+    height: 150px;
+    background-color: #fff;
     left: 1px;
+    top: 1px;
   }
-  /* .logoImg {
-    position: fixed;
-    top: 20px;
-    left: 10px;
-  } */
+  
+  .logoImg {
+    
+  } 
 }

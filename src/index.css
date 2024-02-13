@@ -16,10 +16,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
 }
 body{
   font-family: Merriweather;
 }
 .paddingValue{
   padding: 150px 200px 0 200px;
+}
+
+@media screen and (max-width: 475px){
+  .paddingValue{
+    
+    padding: 150px 0px;
+  }
 }

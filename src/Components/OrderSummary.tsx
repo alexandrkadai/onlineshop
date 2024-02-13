@@ -1,10 +1,7 @@
-import React, {Fragment} from 'react'
 import { useSelector } from 'react-redux';
 import { RootState } from '../Store/store';
 
 import classes from './OrderSummary.module.scss';
-
-
 
 const OrderSummary = () => {
   const stateData = useSelector((state: RootState) => state.carting.cartItems);
@@ -12,31 +9,25 @@ const OrderSummary = () => {
   const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
 
   return (
-    <Fragment>
-    
     <div className={classes.orderSummaryWrap}>
-    <h4>Your Order Summary</h4>
+      <h4>Your Order Summary</h4>
       <div className={classes.orderSummaryItems}>
-       
-          {stateData.map((item) => (
+        {stateData.map((item) => (
           <div className={classes.orderSummaryItem}>
             <span className={classes.summaryItemTex}>{item.name}</span>
             <span className={classes.summaryItemQua}>{item.quantity}</span>
             <span className={classes.summaryItemPrice}>{item.price} GRN</span>
-            </div>
-          ))}
           </div>
+        ))}
+      </div>
 
-        <div className={classes.orderSummaryTotal}>
-          <span className={classes.totalTetx}>Total :</span>
-          <span className={classes.totalAmount}>{totalAmount} GRN</span>
-        </div>
-        <button className={classes.button}>Procceed</button>
-        </div>
-    
-     
-      </Fragment>
-  )
-}
+      <div className={classes.orderSummaryTotal}>
+        <span className={classes.totalTetx}>Total :</span>
+        <span className={classes.totalAmount}>{totalAmount} GRN</span>
+      </div>
+      <button className={classes.button}>Procceed</button>
+    </div>
+  );
+};
 
 export default OrderSummary;

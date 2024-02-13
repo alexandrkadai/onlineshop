@@ -57,3 +57,9 @@
   color: white;
   background-color: black;
 }
+
+@media screen and (max-width: 475px){
+  .orderSummaryWrap{
+    padding: 15px;
+  }
+}

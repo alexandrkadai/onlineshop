@@ -20,11 +20,12 @@ const CartItemPreview = () => {
       {stateData.map((item) => (
         <>
           <ul className={classes.itemsList}>
-            <li>{item.id}</li>
+            {/* <li>{item.id}</li> */}
             <div className={classes.itemNameWrap}>
               <li className={classes.itemName}>{item.name}</li>
               <img className={classes.itemPicture} src={sweet} alt="hoodie" />
             </div>
+            <div className={classes.mobileViewWrap}>
             <div className="flex flex-row gap-5">
               <button onClick={() => dispatch(deletedFromCart(item))}>-</button>
               <li>{item.quantity}</li>
@@ -32,6 +33,7 @@ const CartItemPreview = () => {
             </div>
             <li>{item.size}</li>
             <li>{item.price}</li>
+            </div>
           </ul>
         </>
       ))}

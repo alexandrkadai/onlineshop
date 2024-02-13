@@ -59,3 +59,42 @@
     color: white;
     background-color: black;
   }
+
+
+@media screen and (max-width: 475px){
+    .pageTitle{
+        padding-left: 15px;
+    }
+    .itemsList{
+        position: relative;
+        flex-wrap: wrap;
+        
+        align-items:baseline;
+        
+        width: auto;
+        height: auto;
+        
+    }
+    .itemNameWrap{
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        width: 100%;
+
+    }
+    .itemName{
+        margin-right: 21%;
+    }
+    .itemPicture{
+        width: 155px;
+        height: 155px;
+    }
+
+    .mobileViewWrap{
+        position: absolute;
+        left: 60%;
+        top: 50px;
+    }
+    .subtotalWrap{
+        margin-right: 15px;
+    }
+  }
