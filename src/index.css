@@ -3,31 +3,54 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Merriweather, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #ffffff;
+  background-color: #fcfcff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  
 }
-body{
+body {
   font-family: Merriweather;
 }
-.paddingValue{
+
+.paddingValue {
   padding: 150px 200px 0 200px;
 }
 
-@media screen and (max-width: 475px){
-  .paddingValue{
-    
+#indigo {
+  background-color: #fcfcff;
+  width: 400px;
+}
+#startingpage {
+  opacity: 100;
+  transition: opacity 10s;
+}
+.logoWrapper {
+  margin: auto;
+  height: auto;
+}
+.Imageitself {
+  cursor: url('./cursor.png');
+  margin: auto;
+}
+
+.Imageitself2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 140px;
+  left: 40px;
+}
+
+@media screen and (max-width: 475px) {
+  .paddingValue {
     padding: 150px 0px;
   }
 }

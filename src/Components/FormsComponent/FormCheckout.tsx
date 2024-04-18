@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
-import classes from './FormChecout.module.scss';
+import React, { useEffect, useState, useRef } from "react";
+import classes from "./FormChecout.module.scss";
 
 const FormCheckout = () => {
-  let selectElement = document.getElementById('selectInput');
-  let warhouseSelect = document.getElementById('warhouseSelect');
+  let selectElement = document.getElementById("selectInput");
+  let warhouseSelect = document.getElementById("warhouseSelect");
 
   const warhouseRef = useRef(null);
 
-  const [inputCity, setInputCity] = useState<string>('');
+  const [inputCity, setInputCity] = useState<string>("");
 
   const [cityChoose, setCitiChoose] = useState<string | null>(null);
   const [city, setCity] = useState([]);
@@ -16,9 +16,9 @@ const FormCheckout = () => {
 
   const [warhouseW, setWarhouseW] = useState([]);
 
-  const [warhouseInput, setWarhouuseInput] = useState<string>('');
+  const [warhouseInput, setWarhouuseInput] = useState<string>("");
 
-  const [optionsState, setOptionsState] = useState<string>('');
+  const [optionsState, setOptionsState] = useState<string>("");
 
   // input for user city to send for city search 1st step
   const cityOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ const FormCheckout = () => {
     setInputCity(event.target.value);
     setTimeout(() => {
       setCitiChoose(event.target.value);
-      selectElement!.style.display = 'block';
+      selectElement!.style.display = "block";
     }, 2000);
   };
 
@@ -34,51 +34,53 @@ const FormCheckout = () => {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setOptionsState(event.target.value);
     setInputCity(event.target.value);
-    selectElement!.style.display = 'none';
+    selectElement!.style.display = "none";
     setCity([]);
   };
 
   //Start typing to see all warhouses 1st step
-  const warhouseOnChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const warhouseOnChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     event.preventDefault();
     setWarhouuseInput(event.target.value);
     if (warhouseRef.current) {
       setTimeout(() => {
         setWarhouseChoose(warhouseRef.current.value);
-        warhouseSelect!.style.display = 'block';
+        warhouseSelect!.style.display = "block";
       }, 300);
     }
   };
 
   //Selecting warhouse that user Wish from warhouse list
-  const handleWarhouseChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleWarhouseChange = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
     setWarhouuseInput(event.target.value);
     // setWarhouseSetted(event.target.value);
-    warhouseSelect!.style.display = 'none';
+    warhouseSelect!.style.display = "none";
     setWarhouseW([]);
   };
 
-  
+  var url: string = "https://api.novaposhta.ua/v2.0/json/";
 
-  var url: string = 'https://api.novaposhta.ua/v2.0/json/';
-
-  const key: string = 'e12072eca09e540b30ebfe2fa0eed6e2';
+  const key: string = "e12072eca09e540b30ebfe2fa0eed6e2";
 
   // Find City of Delivery
   useEffect(() => {
     if (cityChoose) {
       const getDepartment = async (): Promise<any> =>
         fetch(url, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
+            Accept: "application/json",
+            "Content-Type": "application/json",
           },
 
           body: JSON.stringify({
             apiKey: key,
-            modelName: 'Address',
-            calledMethod: 'getCities',
+            modelName: "Address",
+            calledMethod: "getCities",
             methodProperties: {
               FindByString: cityChoose,
             },
@@ -96,22 +98,22 @@ const FormCheckout = () => {
   useEffect(() => {
     const getDepartment = async (): Promise<any> =>
       fetch(url, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
 
         body: JSON.stringify({
           apiKey: key,
-          modelName: 'Address',
-          calledMethod: 'getWarehouses',
+          modelName: "Address",
+          calledMethod: "getWarehouses",
           methodProperties: {
-            FindByString: 'Відділення №' + warhouseChoose,
+            FindByString: "Відділення №" + warhouseChoose,
             CityName: optionsState,
-            Page: '1',
-            Limit: '50',
-            Language: 'UA',
+            Page: "1",
+            Limit: "50",
+            Language: "UA",
           },
         }),
       })
@@ -151,15 +153,17 @@ const FormCheckout = () => {
             onChange={cityOnChangeHandler}
           />
 
-          <select className={classes.warhouses} onChange={handleSelectChange} id="selectInput">
-            {city && (
+          <select
+            className={classes.warhouses}
+            onChange={handleSelectChange}
+            id="selectInput"
+          >
+            {city &&
               city.map((item: any) => (
                 <option key={item.Description} value={item.Description}>
                   {item.Description}
                 </option>
-              ))
-            ) 
-            }
+              ))}
           </select>
         </div>
 
@@ -175,14 +179,14 @@ const FormCheckout = () => {
           <select
             className={classes.warhousesList}
             onChange={handleWarhouseChange}
-            id="warhouseSelect">
-            {warhouseW && (
+            id="warhouseSelect"
+          >
+            {warhouseW &&
               warhouseW.map((item: any) => (
                 <option key={item.SiteKey} value={item.Description}>
                   {item.Description}
                 </option>
-              ))
-            ) }
+              ))}
           </select>
         </div>
       </div>

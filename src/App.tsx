@@ -8,20 +8,25 @@ import LookPage from './Pages/LookPage';
 import OneProduct from './Pages/OneProduct';
 import CartPage from './Pages/CartPage';
 import ChecOutPage from './Pages/CheckOutPage';
+import TestPage from './Pages/TestPage';
+
 import './App.css';
 
 function App() {
   const routes = createBrowserRouter([
-    { path: '/', errorElement: <ErrorPage />, element: <MainPage />, children: [
-        {path: '/shirts', element: <OneProduct /> }
-    ] },
+    {
+      path: '/',
+      errorElement: <ErrorPage />,
+      element: <MainPage />,
+      children: [{ path: '/shirts', element: <OneProduct /> }],
+    },
     { path: '/contact', element: <ContactPage /> },
     { path: '/about', element: <AboutPage /> },
     { path: '/look', element: <LookPage /> },
-    {path: '/super', element: <OneProduct /> },
-    {path: '/cart', element: <CartPage /> },
-    {path: '/checkout', element: <ChecOutPage /> },
-
+    { path: '/super', element: <OneProduct /> },
+    { path: '/cart', element: <CartPage /> },
+    { path: '/checkout', element: <ChecOutPage /> },
+    { path: '/testnew', element: <TestPage /> },
   ]);
   return (
     <>

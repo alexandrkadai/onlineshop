@@ -3,7 +3,7 @@ import ProductCard from '../Components/ProductComponents/ProductCard';
 
 function MainPage() {
   return (
-    <main className="paddingValue">
+    <main className="paddingValue" id="startingpage">
         <Header/>
         <ProductCard/>
     </main>
