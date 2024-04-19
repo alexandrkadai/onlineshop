@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
+
 import classes from "./FormChecout.module.scss";
 
 const FormCheckout = () => {
+  const apiKey = process.env.PUBLIC_NOVA_KEY;
   let selectElement = document.getElementById("selectInput");
   let warhouseSelect = document.getElementById("warhouseSelect");
 
@@ -64,7 +66,7 @@ const FormCheckout = () => {
 
   var url: string = "https://api.novaposhta.ua/v2.0/json/";
 
-  const key: string = "e12072eca09e540b30ebfe2fa0eed6e2";
+  
 
   // Find City of Delivery
   useEffect(() => {
@@ -78,7 +80,7 @@ const FormCheckout = () => {
           },
 
           body: JSON.stringify({
-            apiKey: key,
+            apiKey: apiKey,
             modelName: "Address",
             calledMethod: "getCities",
             methodProperties: {
