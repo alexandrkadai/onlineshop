@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   row-gap: 50px;
+  margin-left: 20px;
+  width: 70%;
 }
 .productName {
   font-size: 45px;
@@ -15,18 +17,74 @@
   flex-direction: column;
 }
 .sizeTitle {
-  font-size: 11px;
+  font-size: 15px;
 }
 .sizeSelection {
   font-size: 11px;
   width: 100px;
   border: 1px solid gray;
 }
+.selectTypes {
+}
+.square input {
+  display: none;
+}
+.square {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.square span {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: black;
+  transform-style: preserve-3d;
+}
+
+.square span:before,
+.square span:after {
+  content: '';
+}
+
+.square span:before {
+  border: 1px solid #222021;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: inline-block;
+  position: absolute;
+  left: -6px;
+}
+
+.square span:after {
+  background: #222021;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  transition: 300ms;
+  opacity: 0;
+}
+
+label input:checked + span:after {
+  opacity: 1;
+  transform: translateZ(-1px);
+  
+}
+label input:checked + span{
+  color: white;
+}
+
 .quantityWrap {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+
 .quantityTitle {
   font-size: 11px;
 }
@@ -39,11 +97,11 @@
 
 .itemDesription {
   width: 200px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   text-transform: capitalize;
   font-size: 16px;
 }
-.button{
+.button {
   width: 150px;
   height: 50px;
   color: black;
@@ -51,20 +109,20 @@
   background-color: white;
   font-size: 12px;
 }
-.button:hover{
+.button:hover {
   transition: 0.5s;
   color: white;
   background-color: black;
 }
-.selectSizeWarn{
+.selectSizeWarn {
   display: none;
   font-size: 15px;
   color: red;
   font-weight: bold;
 }
 
-@media screen and (max-width: 475px){
-  .descriptionWrap{
+@media screen and (max-width: 475px) {
+  .descriptionWrap {
     padding: 0px 15px;
   }
 }

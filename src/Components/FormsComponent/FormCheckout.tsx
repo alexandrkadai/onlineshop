@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-
+// import.meta.env.REACT_APP_PUBLIC_NOVA_KEY;
 import classes from "./FormChecout.module.scss";
 
 const FormCheckout = () => {
-  const apiKey = process.env.PUBLIC_NOVA_KEY;
+  // const apiKey = process.env.REACT_APP_PUBLIC_NOVA_KEY;
+  const apiKey = import.meta.env.REACT_APP_PUBLIC_NOVA_KEY;
   let selectElement = document.getElementById("selectInput");
   let warhouseSelect = document.getElementById("warhouseSelect");
 
@@ -107,7 +108,7 @@ const FormCheckout = () => {
         },
 
         body: JSON.stringify({
-          apiKey: key,
+          apiKey: apiKey,
           modelName: "Address",
           calledMethod: "getWarehouses",
           methodProperties: {

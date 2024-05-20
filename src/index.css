@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@font-face {
+  font-family: 'ereg';
+  src: local('ereg') url('/src/assets/fonts/e-Ukraine-Regular.otf') format(otf);
+}
+@font-face {
+  font-family: 'eregB';
+  src: local('eregB') url('/src/assets/fonts/e-Ukraine-Bold.otf') format(otf);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Merriweather, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ereg, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  letter-spacing: 1px;
   background-color: #fcfcff;
 
   font-synthesis: none;

@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
 import MainPage from './Pages/MainPage';
 import ContactPage from './Pages/ContactPage';
 import AboutPage from './Pages/AboutPage';
@@ -8,7 +7,7 @@ import LookPage from './Pages/LookPage';
 import OneProduct from './Pages/OneProduct';
 import CartPage from './Pages/CartPage';
 import ChecOutPage from './Pages/CheckOutPage';
-import TestPage from './Pages/TestPage';
+import Layout from './Components/Ui/Layout';
 
 import './App.css';
 
@@ -17,8 +16,14 @@ function App() {
     {
       path: '/',
       errorElement: <ErrorPage />,
-      element: <MainPage />,
-      children: [{ path: '/shirts', element: <OneProduct /> }],
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <MainPage />,
+          // children: [{ path: '/shirts', element: <OneProduct /> }],
+        },
+      ],
     },
     { path: '/contact', element: <ContactPage /> },
     { path: '/about', element: <AboutPage /> },
@@ -26,13 +31,9 @@ function App() {
     { path: '/super', element: <OneProduct /> },
     { path: '/cart', element: <CartPage /> },
     { path: '/checkout', element: <ChecOutPage /> },
-    { path: '/testnew', element: <TestPage /> },
   ]);
-  return (
-    <>
-      <RouterProvider router={routes} />
-    </>
-  );
+
+  return <RouterProvider router={routes} />;
 }
 
 export default App;

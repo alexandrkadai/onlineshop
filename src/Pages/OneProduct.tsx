@@ -7,8 +7,8 @@ const OneProduct = () => { 
     <div className="paddingValue">
       <Header />
       <section className="flex-col flex sm:flex-row w-full mt-[133px] sm:gap-x-50 ">
-        <ProductDescription />
         <ProductImages />
+        <ProductDescription />
       </section>
     </div>
   );

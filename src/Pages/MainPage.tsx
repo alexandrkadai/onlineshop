@@ -1,12 +1,18 @@
-import Header from '../Components/Header';
+import { useSelector } from 'react-redux';
+import { RootState } from '../Store/store';
 import ProductCard from '../Components/ProductComponents/ProductCard';
+import AnimationComp from '../Components/Ui/AnimationComp';
 
 function MainPage() {
+  const animateState = useSelector((state: RootState) => state.animate.animate);
+
   return (
-    <main className="paddingValue" id="startingpage">
-        <Header/>
-        <ProductCard/>
-    </main>
+    <>
+      {animateState && <AnimationComp />}
+      {!animateState && <main className="paddingValue" id="startingpage">
+        <ProductCard />
+      </main>}
+    </>
   );
 }
 

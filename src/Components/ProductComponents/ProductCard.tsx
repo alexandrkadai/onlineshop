@@ -11,30 +11,39 @@ const ProductCard = () => {
       <Link to="/super">
         <img className={classes.productImg} src={sweet1} alt="product" />
       </Link>
-      <span className={classes.productPrice}>10.99</span>
+      <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
+      <span className={classes.productPrice}>3099 &#8372;</span>
+      </div>
     </div>
     {/* Never Will Be  */}
     <div className={classes.productWrap}>
       <Link to="/super">
         <img className={classes.productImg} src={sweet1} alt="product" />
       </Link>
-      <span className={classes.productPrice}>10.99</span>
+      <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
+      <span className={classes.productPrice}>3099 &#8372;</span>
+      </div>
     </div>
     <div className={classes.productWrap}>
       <Link to="/super">
         <img className={classes.productImg} src={sweet1} alt="product" />
       </Link>
-      <span className={classes.productPrice}>10.99</span>
+      <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
+      <span className={classes.productPrice}>3099 &#8372;</span>
+      </div>
     </div>
+    {/* Never Will Be  */}
     <div className={classes.productWrap}>
       <Link to="/super">
         <img className={classes.productImg} src={sweet1} alt="product" />
       </Link>
-      <span className={classes.productPrice}>10.99</span>
+      <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
+      <span className={classes.productPrice}>3099 &#8372;</span>
+      </div>
     </div>
     </div>
   );

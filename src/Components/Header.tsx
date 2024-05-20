@@ -24,8 +24,10 @@ const Header = () => {
         </ul>
       </nav>
       <div className={classes.cartWrap}>
-       <Link to="/"> <img className={classes.logoImg} src={logo} alt="logo" /></Link>
-        <Cart />
+        <Link to="/">
+          <img className={classes.logoImg} src={logo} alt="logo" />
+        </Link>
+        {/* <Cart /> */}
       </div>
     </>
   );

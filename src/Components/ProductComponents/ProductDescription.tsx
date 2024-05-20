@@ -14,17 +14,18 @@ const ProductDescription = () => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-
     if (optionsState === '') {
       var textHIghlight = document.getElementById('thisIsFine') as unknown as HTMLElement;
       if (textHIghlight) {
         textHIghlight.style.display = 'block';
         setTimeout(() => {
           textHIghlight.style.display = 'none';
-        }, 5000)
+        }, 5000);
       }
     } else {
-      dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count, price: 2000 }));
+      dispatch(
+        addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count, price: 2000 }),
+      );
     }
   };
 
@@ -47,14 +48,16 @@ const ProductDescription = () => {
 
   return (
     <div className={classes.descriptionWrap}>
-      <span className={classes.productName}>Neviebenna Skatertyna</span>
-      <span className={classes.productPrice}>2000 grn.</span>
+      <span className={classes.productName}>Top Shirt</span>
+      <span className={classes.productPrice}>3099 &#8372;</span>
       <div className={classes.selectionWrap}>
         <label htmlFor="size " className={classes.sizeTitle}>
           Size
         </label>
-        <p  id="thisIsFine" className={classes.selectSizeWarn}>Please Select Size</p>
-        <select
+        <p id="thisIsFine" className={classes.selectSizeWarn}>
+          Please Select Size
+        </p>
+        {/* <select
           name="size"
           id="sizeSelect"
           defaultValue=""
@@ -63,17 +66,31 @@ const ProductDescription = () => {
           <option value="">Select Size</option>
           <option value="M">M</option>
           <option value="L">L</option>
-        </select>
+        </select> */}
+        <ul className={classes.selectTypes}>
+          <label className={classes.square}>
+            <input type="radio" value="S" name="size" onChange={handleSelectChange} />
+            <span>S</span>
+          </label>
+          <label className={classes.square}>
+            <input type="radio" value="M" name="size" onChange={handleSelectChange} />
+            <span>M </span>
+          </label>
+          <label className={classes.square}>
+            <input type="radio" value="L" name="size" onChange={handleSelectChange} />
+            <span>L</span>
+          </label>
+        </ul>
       </div>
 
-      <div className={classes.quantityWrap}>
+      {/* <div className={classes.quantityWrap}>
         <span className={classes.quantityTitle}>Quantity</span>
 
         <span>
           <button onClick={handleCount}>+</button> {count}
           <button onClick={handleMinusCount}>-</button>
         </span>
-      </div>
+      </div> */}
 
       {/* <Button /> */}
       <button className={classes.button} onClick={() => handleAddToCart()}>

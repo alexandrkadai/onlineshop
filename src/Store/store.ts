@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer, { CartState, CartItem } from './reducer';
 import cartingReducer from './CartSlice/CartSlice';
+import animatingReducer from './AnimationSlice/AnimationSlice';
 interface extendedCartState extends CartState {
   payload: CartItem;
 }
@@ -11,6 +12,7 @@ interface extendedCartState extends CartState {
 const store = configureStore({
   reducer: {
     carting: cartingReducer,
+    animate: animatingReducer,
   },
 });
 
