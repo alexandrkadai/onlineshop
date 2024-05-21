@@ -23,14 +23,14 @@ function App() {
           element: <MainPage />,
           // children: [{ path: '/shirts', element: <OneProduct /> }],
         },
+        { path: '/contact', element: <ContactPage /> },
+        { path: '/about', element: <AboutPage /> },
+        { path: '/look', element: <LookPage /> },
+        { path: '/super', element: <OneProduct /> },
+        { path: '/cart', element: <CartPage /> },
+        { path: '/checkout', element: <ChecOutPage /> },
       ],
     },
-    { path: '/contact', element: <ContactPage /> },
-    { path: '/about', element: <AboutPage /> },
-    { path: '/look', element: <LookPage /> },
-    { path: '/super', element: <OneProduct /> },
-    { path: '/cart', element: <CartPage /> },
-    { path: '/checkout', element: <ChecOutPage /> },
   ]);
 
   return <RouterProvider router={routes} />;

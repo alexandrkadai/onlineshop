@@ -6,8 +6,7 @@ type Props = {};
 
 const ContactPage = (props: Props) => {
   return (
-    <div className="paddingValue">
-      <Header />
+    <div className="paddingValueChildren">
       <FormComponent />
     </div>
   );

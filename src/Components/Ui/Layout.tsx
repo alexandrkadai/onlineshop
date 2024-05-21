@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import CartItemPreview from '../CartItemPreview';
-import Cart from '../Cart';
+
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Store/store';
 import Header from '../Header';
 const Layout = () => {
   const [openCart, setOpenCart] = useState<boolean>(false);
+  const animateState = useSelector((state: RootState) => state.animate.animate);
 
   const toggleCart = () => {
     setOpenCart(!openCart);
@@ -15,9 +18,8 @@ const Layout = () => {
     <>
       <div className="paddingValue">
         <div className="layout">
-          <Header />
+        {!animateState ? <Header toggleCart={toggleCart} /> : <></>}
 
-          {openCart && <span>SUper Text</span>}
           {openCart && <CartItemPreview setOpenCart={setOpenCart} openCart />}
         </div>
       </div>

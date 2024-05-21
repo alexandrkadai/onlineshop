@@ -4,9 +4,8 @@ type Props = {};
 
 const AboutPage = (props: Props) => {
   return (
-    <div className="paddingValue">
-      <Header />
-      <span className='text-[35px]'>About</span>
+    <div className="paddingValueChildren text-center">
+      <span className='text-[35px] block mt-[50px]'>About</span>
     </div>
   );
 };

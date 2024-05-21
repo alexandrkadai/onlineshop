@@ -7,6 +7,7 @@ import classes from './ProductCard.module.scss';
 const ProductCard = () => {
   return (
     <div className={classes.mainWrap}>
+
     <div className={classes.productWrap}>
       <Link to="/super">
         <img className={classes.productImg} src={sweet1} alt="product" />
@@ -16,6 +17,7 @@ const ProductCard = () => {
       <span className={classes.productPrice}>3099 &#8372;</span>
       </div>
     </div>
+    
     {/* Never Will Be  */}
     <div className={classes.productWrap}>
       <Link to="/super">

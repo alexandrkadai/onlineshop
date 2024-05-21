@@ -30,6 +30,9 @@ body {
 .paddingValue {
   padding: 150px 200px 0 200px;
 }
+.paddingValueChildren{
+  padding: 0px 200px 0 200px;
+}
 
 #indigo {
   background-color: #fcfcff;

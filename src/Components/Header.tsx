@@ -3,8 +3,12 @@ import Cart from './Cart';
 import logo from '../assets/logo.webp';
 import classes from './Header.module.css';
 
+type Props = {
+  toggleCart: () => void;
+};
 
-const Header = () => {
+const Header = ({ toggleCart }: Props) => {
+  
   return (
     <>
       <nav className={classes.mainNav}>
@@ -16,7 +20,7 @@ const Header = () => {
             <Link to="/look">Look</Link>
           </li>
           <li>
-            <Link to="/about">Support</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/contact">Communication</Link>
@@ -27,7 +31,7 @@ const Header = () => {
         <Link to="/">
           <img className={classes.logoImg} src={logo} alt="logo" />
         </Link>
-        {/* <Cart /> */}
+        <Cart toggleCart={toggleCart} />
       </div>
     </>
   );

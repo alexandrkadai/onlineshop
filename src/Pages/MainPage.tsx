@@ -9,7 +9,7 @@ function MainPage() {
   return (
     <>
       {animateState && <AnimationComp />}
-      {!animateState && <main className="paddingValue" id="startingpage">
+      {!animateState && <main className="paddingValueChildren" id="startingpage">
         <ProductCard />
       </main>}
     </>

@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../Store/store';
-import { addedToCart, deletedFromCart, addOneItem } from '../Store/CartSlice/CartSlice';
-
-import sweet from '../assets/sweet1/sweet1.avif';
+import { deletedFromCart, addOneItem } from '../Store/CartSlice/CartSlice';
 import classes from './CartItemPreview.module.scss';
 import { Dispatch, SetStateAction } from 'react';
 
@@ -34,16 +31,15 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
             {/* <li>{item.id}</li> */}
             <div className={classes.itemNameWrap}>
               <li className={classes.itemName}>{item.name}</li>
-              <img className={classes.itemPicture} src={sweet} alt="hoodie" />
             </div>
             <div className={classes.mobileViewWrap}>
-              <div className="flex flex-row gap-5">
-                <button onClick={() => dispatch(deletedFromCart(item))}>-</button>
-                <li>{item.quantity}</li>
-                <button onClick={() => dispatch(addOneItem(item))}>+</button>
-              </div>
               <li>{item.size}</li>
-              <li>{item.price}</li>
+              <li>{item.price} &#8372;</li>
+              <div className="flex flex-row gap-2">
+                <button className={classes.btnText} onClick={() => dispatch(deletedFromCart(item))}>&#x2212;</button>
+                <li>{item.quantity}</li>
+                <button className={classes.btnText} onClick={() => dispatch(addOneItem(item))}>&#x2b;</button>
+              </div>
             </div>
           </ul>
         </>
@@ -52,8 +48,8 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
       <div className={classes.subtotalWrap}>
         {totalAmount ? (
           <div className={classes.totalCheckWrap}>
-            <span>SubTotal {totalQuantity}</span>
-            <span>{totalAmount} GRN</span>
+            <span>SubTotal {totalQuantity} Items:</span>
+            <span>{totalAmount} UAH</span>
           </div>
         ) : (
           <div className={classes.emptyCart}>

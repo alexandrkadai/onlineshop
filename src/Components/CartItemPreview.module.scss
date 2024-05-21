@@ -11,6 +11,7 @@
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease; /* Smooth sliding transition */
+  z-index: 10;
 }
 .pageClose{
   position: absolute;
@@ -26,7 +27,7 @@
 .itemsList {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 33px;
   column-gap: 30px;
@@ -38,7 +39,7 @@
   vertical-align: baseline;
 }
 .itemName {
-  margin-top: 7px;
+  
   font-weight: bold;
 }
 .itemPicture {
@@ -56,10 +57,11 @@
 .totalCheckWrap {
   display: flex;
   justify-content: space-between;
-  flex-direction:column;
+  flex-direction:row;
   margin-top: 33px;
   margin-left: 5px;
-  width: 50%;
+  padding: 10px;
+  width: 100%;
   
 }
 .emptyCart{
@@ -91,7 +93,16 @@
   color: white;
   background-color: black;
 }
-
+.mobileViewWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.btnText{
+  display: block;
+  margin-top:-1px;
+  font-size: 14px;
+}
 /* @media screen and (max-width: 475px) {
   .pageTitle {
     padding-left: 15px;
@@ -118,11 +129,7 @@
     height: 155px;
   }
 
-  .mobileViewWrap {
-    position: absolute;
-    left: 60%;
-    top: 50px;
-  }
+  
   .subtotalWrap {
     margin-right: 15px;
   }

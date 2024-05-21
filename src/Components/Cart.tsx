@@ -1,17 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { ActionTypes, addToCart, deleteFromCart } from '../Store/actions';
+import { useSelector } from 'react-redux';
 import { RootState } from '../Store/store';
-import { Link } from 'react-router-dom';
-import classes from './Cart.module.css';
 
 
-function Cart() {
+type Props ={
+  toggleCart: () => void ;
+}
+const  Cart = ({toggleCart} :Props) => {
   const quantityTotal = useSelector((state: RootState) => state.carting.totalQuantity);
 
   return (
-    <div onClick={toggleCart}>
+    <div className='cursor-pointer' onClick={toggleCart}>
       <span>
-        cart
+        Cart
         <span> ({quantityTotal})</span>
       </span>
     </div>

@@ -1,11 +1,10 @@
 import React from 'react';
 import Header from '../Components/Header';
-type Props = {};
 
-const LookPage = (props: Props) => {
+
+const LookPage = () => {
   return (
-    <div className='paddingValue text-center'>
-      <Header />
+    <div className='paddingValueChildren text-center'>
       <span className='text-[40px]'>LookPage</span>
     </div>
   );
