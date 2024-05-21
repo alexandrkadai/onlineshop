@@ -66,9 +66,9 @@ const cartReducer = (state: CartState = initialState, action: ActionTypes) => {
           cartItems: updatedCartItems,
         };
       }
-    } else{ 
-      return;
-    }
+    } 
+      return state;
+    
 
     default:
       return state;

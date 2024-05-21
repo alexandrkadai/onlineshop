@@ -1,9 +1,6 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
-type Props = {};
 
-const ErrorPage = (props: Props) => {
+const ErrorPage = () => {
   return (
     <div className='text-center mt-[200px]'>
       <h2 className="text-[35px]">This Page Doesn`t exist</h2>

@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice } from "@reduxjs/toolkit";
 
-type DataType = {
-    sucsses : boolean;
-    data :string[];
-};
+// type DataType = {
+//     sucsses : boolean;
+//     data :string[];
+// };
 
-const initialState:DataType = {
-    sucsses: false,
-    data: [],
-}
+// const initialState:DataType = {
+//     sucsses: false,
+//     data: [],
+// }
 
-const DataSlice = createSlice({
-    name: 'dataSl',
-    initialState,
-    reducers:{
+// // const DataSlice = createSlice({
+// //     name: 'dataSl',
+// //     initialState,
+// //     reducers:{
         
-    }
-});
+// //     }
+// // });
 

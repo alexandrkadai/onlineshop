@@ -6,7 +6,7 @@ import classes from './OrderSummary.module.scss';
 const OrderSummary = () => {
   const stateData = useSelector((state: RootState) => state.carting.cartItems);
   const totalAmount = useSelector((state: RootState) => state.carting.totalAmount);
-  const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
+  // const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
 
   return (
     <div className={classes.orderSummaryWrap}>

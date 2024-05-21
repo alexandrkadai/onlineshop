@@ -7,8 +7,8 @@ const AnimationComp = () => {
   const dispatch = useDispatch();
 
   const clickImageHadler = () => {
-    let img = document.querySelector('#indigo');
-    let wrp = document.querySelector('#aniWrap');
+    let img: HTMLImageElement = document.querySelector('#indigo');
+    let wrp: HTMLImageElement = document.querySelector('#aniWrap');
 
     img.src = Woke;
 

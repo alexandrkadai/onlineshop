@@ -11,7 +11,6 @@ const Layout = () => {
 
   const toggleCart = () => {
     setOpenCart(!openCart);
-    console.log(openCart);
   };
 
   return (

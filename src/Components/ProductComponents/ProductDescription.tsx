@@ -1,16 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-import { RootState } from '../../Store/store';
+// import { RootState } from '../../Store/store';
 import { addedToCart } from '../../Store/CartSlice/CartSlice';
 
 import classes from './ProductDescription.module.scss';
 
 const ProductDescription = () => {
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
   const [optionsState, setOptionsState] = useState('');
 
-  const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
+  // const caryItemState = useSelector((state: RootState) => state.carting.cartItems);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -23,28 +23,26 @@ const ProductDescription = () => {
         }, 5000);
       }
     } else {
-      dispatch(
-        addedToCart({ id: 1, name: 'super', size: optionsState, quantity: count, price: 2000 }),
-      );
+      dispatch(addedToCart({ id: 1, name: 'super', size: optionsState, quantity: 1, price: 2000 }));
     }
   };
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setOptionsState(event.target.value);
+  const handleSelectChange = (item: string) => {
+    setOptionsState(item);
   };
 
-  const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setCount(count + 1);
-  };
+  // const handleCount = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+  //   setCount(count + 1);
+  // };
 
-  const handleMinusCount = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setCount(count - 1);
-    if (count <= 1) {
-      setCount(1);
-    }
-  };
+  // const handleMinusCount = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+  //   setCount(count - 1);
+  //   if (count <= 1) {
+  //     setCount(1);
+  //   }
+  // };
 
   return (
     <div className={classes.descriptionWrap}>
@@ -69,15 +67,15 @@ const ProductDescription = () => {
         </select> */}
         <ul className={classes.selectTypes}>
           <label className={classes.square}>
-            <input type="radio" value="S" name="size" onChange={handleSelectChange} />
+            <input type="radio" value="S" name="size" onChange={() => handleSelectChange('S')} />
             <span>S</span>
           </label>
           <label className={classes.square}>
-            <input type="radio" value="M" name="size" onChange={handleSelectChange} />
+            <input type="radio" value="M" name="size" onChange={() => handleSelectChange('M')} />
             <span>M </span>
           </label>
           <label className={classes.square}>
-            <input type="radio" value="L" name="size" onChange={handleSelectChange} />
+            <input type="radio" value="L" name="size" onChange={() => handleSelectChange('L')} />
             <span>L</span>
           </label>
         </ul>

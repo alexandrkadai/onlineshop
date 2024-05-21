@@ -1,13 +1,13 @@
-import classes from './ProductPage.module.scss';
+// import classes from './ProductPage.module.scss';
 import ProductCard from './ProductCard';
-type Props = {
-  coverImg?: JSX.Element;
-  size: number;
-  price: number;
-  available: boolean;
-};
+// type Props = {
+//   coverImg?: JSX.Element;
+//   size: number;
+//   price: number;
+//   available: boolean;
+// };
 
-const ProductPage = (props: Props) => {
+const ProductPage = () => {
   return (
     <section className="paddingValue ">
       <ProductCard />

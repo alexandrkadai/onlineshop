@@ -5,7 +5,6 @@ import AboutPage from './Pages/AboutPage';
 import ErrorPage from './Pages/ErrorPage';
 import LookPage from './Pages/LookPage';
 import OneProduct from './Pages/OneProduct';
-import CartPage from './Pages/CartPage';
 import ChecOutPage from './Pages/CheckOutPage';
 import Layout from './Components/Ui/Layout';
 
@@ -27,7 +26,6 @@ function App() {
         { path: '/about', element: <AboutPage /> },
         { path: '/look', element: <LookPage /> },
         { path: '/super', element: <OneProduct /> },
-        { path: '/cart', element: <CartPage /> },
         { path: '/checkout', element: <ChecOutPage /> },
       ],
     },

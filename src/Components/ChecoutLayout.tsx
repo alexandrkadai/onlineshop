@@ -1,4 +1,3 @@
-import React from 'react';
 import FormCheckout from './FormsComponent/FormCheckout';
 import OrderSummary from './OrderSummary';
 import classes from './ChecoutLayout.module.scss';

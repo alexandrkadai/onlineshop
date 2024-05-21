@@ -3,7 +3,7 @@ import { RootState } from '../Store/store';
 import { deletedFromCart, addOneItem } from '../Store/CartSlice/CartSlice';
 import classes from './CartItemPreview.module.scss';
 import { Dispatch, SetStateAction } from 'react';
-
+import { Link } from 'react-router-dom';
 type Props = {
   setOpenCart: Dispatch<SetStateAction<boolean>>;
   openCart: boolean;
@@ -36,9 +36,13 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
               <li>{item.size}</li>
               <li>{item.price} &#8372;</li>
               <div className="flex flex-row gap-2">
-                <button className={classes.btnText} onClick={() => dispatch(deletedFromCart(item))}>&#x2212;</button>
+                <button className={classes.btnText} onClick={() => dispatch(deletedFromCart(item))}>
+                  &#x2212;
+                </button>
                 <li>{item.quantity}</li>
-                <button className={classes.btnText} onClick={() => dispatch(addOneItem(item))}>&#x2b;</button>
+                <button className={classes.btnText} onClick={() => dispatch(addOneItem(item))}>
+                  &#x2b;
+                </button>
               </div>
             </div>
           </ul>
@@ -62,8 +66,10 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
         {/* </Link> */}
       </div>
       {totalAmount ? (
-        <div className={classes.buttonWrap}>
-          <button className={classes.button}>checkout </button>
+        <div className={classes.buttonWrap} onClick={handleCartOpen}>
+          <Link to="/checkout">
+            <button className={classes.button}>checkout </button>
+          </Link>
         </div>
       ) : (
         <></>
