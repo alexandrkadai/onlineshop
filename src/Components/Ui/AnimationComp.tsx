@@ -5,7 +5,8 @@ import Woke from '../../assets//RowdYWoke.gif';
 
 const AnimationComp = () => {
   const dispatch = useDispatch();
-
+  
+  document.body.style.overflow = "hidden";
   const clickImageHadler = () => {
     let img: HTMLImageElement = document.querySelector('#indigo');
     let wrp: HTMLImageElement = document.querySelector('#aniWrap');
@@ -17,6 +18,7 @@ const AnimationComp = () => {
       setTimeout(() => {
         wrp.style.display = 'none';
         dispatch(setAnimate());
+        document.body.style.overflow = "visible";
       }, 500);
     }, 6000);
   };

@@ -63,4 +63,7 @@ body {
   .paddingValue {
     padding: 150px 0px;
   }
+  .paddingValueChildren{
+    padding: 0px;
+  }
 }

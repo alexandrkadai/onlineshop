@@ -1,6 +1,5 @@
 import sweet1 from '../../assets/sweet1/sweet1.avif';
 import { Link } from 'react-router-dom';
-
 import classes from './ProductCard.module.scss';
 
 

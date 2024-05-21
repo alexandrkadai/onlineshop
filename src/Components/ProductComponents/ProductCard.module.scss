@@ -24,7 +24,6 @@
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-
 }
 .productImg {
   width: 100%;
@@ -33,15 +32,18 @@
 
 @media screen and (max-width: 475px) {
   .mainWrap {
-    row-gap: 0px;
+    gap: 15px;
+    margin-top: 0;
+    justify-content: center;
+    padding-bottom: 400px;
   }
   .productWrap {
-    width: auto;
+    width: 300px;
   }
 
   .productImg {
-    width: 300px;
-    height: 350px;
+    width: 350px;
+    height: auto;
   }
   .productPrice {
     display: block;
