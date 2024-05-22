@@ -59,4 +59,10 @@ margin-top: -2px;
     left: 1px;
     top: 1px;
   }
+  .corner{
+    top: 150px;
+  }
+  .cornerPointer{
+    top: 150px;
+  }
 }
