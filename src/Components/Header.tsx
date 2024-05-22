@@ -3,7 +3,7 @@ import Cart from './Cart';
 import logo from '../assets/logo.webp';
 import classes from './Header.module.css';
 import corner from '../assets/corner.svg';
-import contacts from '../assets/contacts.png';
+
 
 type Props = {
   toggleCart: () => void;
@@ -36,7 +36,6 @@ const Header = ({ toggleCart }: Props) => {
        
       </div>
       
-        <img  className={classes.cornerPointer} src={contacts} alt="contacts" />
       <img  className={classes.corner} src={corner} alt="paper corner" />
     </>
   );
