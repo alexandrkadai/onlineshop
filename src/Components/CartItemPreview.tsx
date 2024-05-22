@@ -1,25 +1,38 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../Store/store';
-import { deletedFromCart, addOneItem } from '../Store/CartSlice/CartSlice';
-import classes from './CartItemPreview.module.scss';
-import { Dispatch, SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
+import { deletedFromCart, addOneItem } from '../Store/CartSlice/CartSlice';
+import { Dispatch, SetStateAction } from 'react';
+import classes from './CartItemPreview.module.scss';
+import { motion } from 'framer-motion';
+
 type Props = {
   setOpenCart: Dispatch<SetStateAction<boolean>>;
   openCart: boolean;
 };
+
 const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
   const dispatch = useDispatch();
+  
   const stateData = useSelector((state: RootState) => state.carting.cartItems);
   const totalAmount = useSelector((state: RootState) => state.carting.totalAmount);
   const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
 
   const handleCartOpen = () => {
     setOpenCart(!openCart);
+    
   };
+  
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  }
 
   return (
-    <div className={classes.previewWrap}>
+    <motion.div
+      animate={openCart ? 'open' : 'closed'}
+      variants={variants}
+      className={classes.previewWrap}>
       <h2 className={classes.pageTitle}>Shopping Cart</h2>
       <span className={classes.pageClose} onClick={handleCartOpen}>
         &#10005;
@@ -74,7 +87,7 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
       ) : (
         <></>
       )}
-    </div>
+    </motion.div>
   );
 };
 
