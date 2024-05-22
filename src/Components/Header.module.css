@@ -21,6 +21,21 @@
   align-items: center;
   z-index: 1;
 }
+.corner{
+  position: absolute;
+  right: -35px;
+  top: 100px;
+  width: 145px;
+  height: 145px;
+  transform: rotate(-70deg);
+  cursor: pointer;
+}
+.cornerPointer{
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  cursor: pointer;
+}
 @media screen and (max-width: 475px){
   .mainNav {
     width: 300px;
