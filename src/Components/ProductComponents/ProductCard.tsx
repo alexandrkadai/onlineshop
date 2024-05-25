@@ -9,7 +9,7 @@ const ProductCard = () => {
 
     <div className={classes.productWrap}>
       <Link to="/super">
-        <img className={classes.productImg} src={sweet1} alt="product" />
+        <img className={classes.productImg} src={sweet1} alt="product" loading="lazy"/>
       </Link>
       <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
@@ -20,7 +20,7 @@ const ProductCard = () => {
     {/* Never Will Be  */}
     <div className={classes.productWrap}>
       <Link to="/super">
-        <img className={classes.productImg} src={sweet1} alt="product" />
+        <img className={classes.productImg} src={sweet1} alt="product"  loading="lazy"/>
       </Link>
       <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
@@ -29,7 +29,7 @@ const ProductCard = () => {
     </div>
     <div className={classes.productWrap}>
       <Link to="/super">
-        <img className={classes.productImg} src={sweet1} alt="product" />
+        <img className={classes.productImg} src={sweet1} alt="product"  loading="lazy"/>
       </Link>
       <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
@@ -39,7 +39,7 @@ const ProductCard = () => {
     {/* Never Will Be  */}
     <div className={classes.productWrap}>
       <Link to="/super">
-        <img className={classes.productImg} src={sweet1} alt="product" />
+        <img className={classes.productImg} src={sweet1} alt="product" loading="lazy" />
       </Link>
       <div className={classes.producttextWrap}>
       <span className={classes.productName}>top shirt</span>
