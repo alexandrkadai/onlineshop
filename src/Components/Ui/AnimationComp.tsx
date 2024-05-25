@@ -22,6 +22,10 @@ const AnimationComp = () => {
       }, 500);
     }, 6000);
   };
+  setTimeout(() => {
+    dispatch(setAnimate());
+    
+  }, 7000);
 
   return (
     <>
