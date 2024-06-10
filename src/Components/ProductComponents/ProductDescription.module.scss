@@ -1,7 +1,7 @@
 .descriptionWrap {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap:0px;
   margin-left: 20px;
   width: 70%;
 }
@@ -10,9 +10,10 @@
   text-transform: uppercase;
 }
 .productPrice {
-  font-size: 17px;
+  font-size: 45px;
 }
 .selectionWrap {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -30,15 +31,17 @@
 .square {
   position: relative;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 20px 26px;
   cursor: pointer;
   margin-right: 10px;
 }
 .square span {
   position: absolute;
-  top: 0;
-  left: 5px;
+  top: 0px;
+  left: 7px;
   color: black;
+  font-size: 30px;
+  margin: 0 auto;
   transform-style: preserve-3d;
 }
 
@@ -48,19 +51,21 @@
 }
 
 .square span:before {
-  border: 1px solid #222021;
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
+  border: 4px solid #222021;
+  width: 50px;
+  height: 50px;
+  margin-right: 40px;
   display: inline-block;
   position: absolute;
   left: -6px;
+  top: 0;
+
 }
 
 .square span:after {
   background: #222021;
-  width: 24px;
-  height: 24px;
+  width: 49px;
+  height: 49px;
   position: absolute;
   top: 0;
   left: -6px;
@@ -94,18 +99,20 @@ label input:checked + span{
 }
 
 .itemDesription {
+  margin-top: 35px;
   width: 200px;
   color: #a0a0a0;
   text-transform: capitalize;
   font-size: 16px;
 }
 .button {
-  width: 150px;
+  margin-top: 15px;
+  width: 270px;
   height: 50px;
   color: black;
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: white;
-  font-size: 12px;
+  font-size: 27px;
 }
 .button:hover {
   transition: 0.5s;

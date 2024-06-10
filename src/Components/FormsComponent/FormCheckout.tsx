@@ -123,30 +123,30 @@ const FormCheckout = () => {
 
   return (
     <div className={classes.fromWraper}>
-      <h4 className={classes.headerTitle}>Delivery Information</h4>
+      <h4 className={classes.headerTitle}>Відправка</h4>
       <form className={classes.formItslef}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" placeholder="Your Name" />
+        <label htmlFor="name">І`мя</label>
+        <input type="text" name="name" placeholder="" />
 
-        <label htmlFor="surname">Surname</label>
-        <input name="surname" type="text" placeholder="Your Surname" />
+        <label htmlFor="surname">Прізвище</label>
+        <input name="surname" type="text" placeholder="" />
 
-        <label htmlFor="phoneNum">Phone Number</label>
-        <input name="phoneNum" type="tel" placeholder="Your Phone" />
+        <label htmlFor="phoneNum">Телефон</label>
+        <input name="phoneNum" type="tel" placeholder="" />
 
-        <label htmlFor="emailAd">Email</label>
-        <input name="emailAd" type="email" placeholder="Email" />
+        <label htmlFor="emailAd">Email адреса</label>
+        <input name="emailAd" type="email" placeholder="" />
       </form>
 
       <div className={classes.deliveryWrap}>
-        <h4 className={classes.deliveryTitle}>Delivery by Novaposhta</h4>
+        <h4 className={classes.deliveryTitle}>Країна</h4>
         <div className={classes.warhouseWrap}>
-          <label htmlFor="city">Enter Your City</label>
+          <label htmlFor="city">Місто доставки</label>
           <input
             className={classes.warhouseWrapInput}
             type="text"
             name="city"
-            placeholder="City Name"
+            placeholder="Назва міста"
             value={inputCity}
             onChange={cityOnChangeHandler}
           />
@@ -162,11 +162,12 @@ const FormCheckout = () => {
         </div>
 
         <div className={classes.warhouseWrap}>
+        <label htmlFor="warhouse">Оберіть відділення</label>
           <input
             className={classes.warhouseWrapInput}
             type="text"
             name="warhouse"
-            placeholder="Start Enter warhouse"
+            placeholder="Відділення"
             ref={warhouseRef}
             value={warhouseInput}
             onChange={warhouseOnChangeHandler}

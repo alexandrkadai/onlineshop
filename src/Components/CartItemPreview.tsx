@@ -24,7 +24,7 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
 
   return (
     <div className={classes.previewWrap}>
-      <h2 className={classes.pageTitle}>Shopping Cart</h2>
+      <h2 className={classes.pageTitle}>Кошик</h2>
       <span className={classes.pageClose} onClick={handleCartOpen}>
         &#10005;
       </span>
@@ -56,7 +56,7 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
       <div className={classes.subtotalWrap}>
         {totalAmount ? (
           <div className={classes.totalCheckWrap}>
-            <span>SubTotal {totalQuantity} Items:</span>
+            <span>Що по грошам :</span>
             <span>{totalAmount} UAH</span>
           </div>
         ) : (
@@ -72,7 +72,7 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
       {totalAmount ? (
         <div className={classes.buttonWrap} onClick={handleCartOpen}>
           <Link to="/checkout">
-            <button className={classes.button}>checkout </button>
+            <button className={classes.button}>Беру :)</button>
           </Link>
         </div>
       ) : (

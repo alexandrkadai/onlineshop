@@ -11,7 +11,7 @@ const  Cart = ({toggleCart} :Props) => {
   return (
     <div className='cursor-pointer' onClick={toggleCart}>
       <span>
-        Cart
+        Кошик
         <span> ({quantityTotal})</span>
       </span>
     </div>

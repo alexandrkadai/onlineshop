@@ -49,9 +49,9 @@ const ProductDescription = () => {
       <span className={classes.productName}>Top Shirt</span>
       <span className={classes.productPrice}>3099 &#8372;</span>
       <div className={classes.selectionWrap}>
-        <label htmlFor="size " className={classes.sizeTitle}>
+        {/* <label htmlFor="size " className={classes.sizeTitle}>
           Size
-        </label>
+        </label> */}
         <p id="thisIsFine" className={classes.selectSizeWarn}>
           Please Select Size
         </p>
@@ -92,7 +92,7 @@ const ProductDescription = () => {
 
       {/* <Button /> */}
       <button className={classes.button} onClick={() => handleAddToCart()}>
-        Add To Cart
+        Додати в Кошик
       </button>
       <p className={classes.itemDesription}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has

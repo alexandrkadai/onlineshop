@@ -9,8 +9,10 @@ const OrderSummary = () => {
   // const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
 
   return (
+    <>
     <div className={classes.orderSummaryWrap}>
-      <h4>Your Order Summary</h4>
+      
+      <h4>Підсумок</h4>
       <div className={classes.orderSummaryItems}>
         {stateData.map((item) => (
           <div className={classes.orderSummaryItem}>
@@ -22,11 +24,12 @@ const OrderSummary = () => {
       </div>
 
       <div className={classes.orderSummaryTotal}>
-        <span className={classes.totalTetx}>Total :</span>
+        <span className={classes.totalTetx}> Що по грошам :</span>
         <span className={classes.totalAmount}>{totalAmount} GRN</span>
       </div>
-      <button className={classes.button}>Procceed</button>
+      <button className={classes.button}>Оплатити</button>
     </div>
+    </>
   );
 };
 

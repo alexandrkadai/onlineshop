@@ -1,41 +1,44 @@
-@font-face {
-  font-family: 'ereg';
-  src: local('ereg') url('/src/assets/fonts/e-Ukraine-Regular.otf') format(otf);
-}
-@font-face {
-  font-family: 'eregB';
-  src: local('eregB') url('/src/assets/fonts/e-Ukraine-Bold.otf') format(otf);
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ereg';
+  src:url('/src/assets/fonts/e-Ukraine-Regular.otf'), format(otf);
+}
+@font-face {
+  font-family: 'eregB';
+  src: url('/src/assets/fonts/e-Ukraine-Bold.otf'), format(otf);
+}
+
 :root {
-  font-family: ereg, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "ereg",'eregB', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 1px;
-  background-color: #fff;
-
+  
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-body {
-  font-family: Merriweather;
+*{
+  font-family: "eregB";
 }
 
 .paddingValue {
   padding: 150px 200px 0 200px;
+  background-color: #fff;
 }
 .paddingValueChildren{
   padding: 0px 200px 0 200px;
+  background-color: #fff;
 }
 
 #indigo {
-  background-color: #fcfcff;
+  
   width: 400px;
 }
 #startingpage {
