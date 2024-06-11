@@ -22,10 +22,13 @@ Steps to complete store :
               <option>loading</option>
             )}
 
-
+------------
 1. Contry region Oblast in the Delivery 
 2. Arrow after form complete 
 3. Languages. 
 4. Different Colors. 
 5. Position fixed order summary.
-6. Payments System
+6. Payments System Plata by MONO BAnk.
+7. Corener text - Terms And Conditions.
+8. Cursor pop it. 
+9.
