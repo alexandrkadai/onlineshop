@@ -15,7 +15,7 @@ const CartItemPreview = ({ setOpenCart, openCart }: Props) => {
 
   const stateData = useSelector((state: RootState) => state.carting.cartItems);
   const totalAmount = useSelector((state: RootState) => state.carting.totalAmount);
-  const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
+  // const totalQuantity = useSelector((state: RootState) => state.carting.totalQuantity);
 
   const handleCartOpen = () => {
     setOpenCart(!openCart);
