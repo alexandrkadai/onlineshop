@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo.png';
 import classes from './Header.module.scss';
 import corner from '../assets/corner.svg';
 
