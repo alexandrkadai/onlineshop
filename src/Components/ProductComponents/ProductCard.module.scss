@@ -1,3 +1,15 @@
+@keyframes apperaing {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
 .mainWrap {
   margin-top: 60px;
   flex-wrap: wrap;
@@ -6,6 +18,8 @@
   justify-content: space-between;
   row-gap: 30px;
   column-gap: 30px;
+  // transition: all 0.5s ease-in-out;
+  animation: apperaing 5s ease-in-out;
 }
 
 .productWrap {
@@ -54,3 +68,4 @@
     
   }
 }
+

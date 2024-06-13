@@ -1,3 +1,15 @@
+@keyframes apperaing {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
 .mainNav {
   text-align: center;
 }
@@ -20,6 +32,7 @@
   margin-top: 33px;
   align-items: center;
   z-index: 1;
+  animation: apperaing 5s ease-in-out;
 }
 .corner{
   position: absolute;
